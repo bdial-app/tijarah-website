@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+:root {
+  --page: #f3f6f7;
+  --ink: #222326;
+  --ink-60: rgba(34, 35, 38, 0.6);
+  --ink-40: rgba(34, 35, 38, 0.4);
+  --btn-bg: #1f2025;
+  --btn-fg: #ebf0f8;
+  --star: #fecc00;
+  --brand: #221d8f;
+  --brand-deep: #171060;
+  --brand-bright: #2f2ba8;
+  --amber: #f5b31e;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-ink-60: var(--ink-60);
+  --color-ink-40: var(--ink-40);
+  --color-star: var(--star);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-bright: var(--brand-bright);
+  --color-amber: var(--amber);
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom classes live in the components layer so Tailwind utilities
+   (e.g. md:animate-none, md:[mask-image:none]) can override them. */
+@layer components {
+/* Heading scale lifted from the reference: clamp(3rem → 5rem), tight leading */
+.hero-h1 {
+  font-size: clamp(3rem, 2.857vw + 2.429rem, 5rem);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+/* Pill button with the radial "highlight" that rises from the bottom on hover */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.125rem;
+  border-radius: 8rem;
+  background: var(--brand);
+  color: var(--btn-fg);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-decoration: none;
+  overflow: clip;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.04);
+}
+
+.btn-highlight {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  opacity: 0.6;
+  pointer-events: none;
+  background-image: radial-gradient(circle farthest-side, #ebf0f8, rgba(255, 255, 255, 0));
+  transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), top 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn:hover .btn-highlight {
+  top: 25%;
+  opacity: 1;
+}
+
+/* Store badge: same pill + rising highlight as .btn, but sized for the
+   two-line "Download on the / App Store" label. Colours come from utilities
+   so the badge can sit on light or dark panels. */
+.store-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-decoration: none;
+  overflow: clip;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s;
+}
+
+.store-btn:hover {
+  transform: scale(1.04);
+}
+
+.store-btn:hover .btn-highlight {
+  top: 25%;
+  opacity: 1;
+}
+
+/* Section typography lifted from the reference */
+.section-h2 {
+  font-size: clamp(2.5rem, 2.143vw + 2.071rem, 4rem);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.section-h3 {
+  font-size: clamp(1.5rem, 0.714vw + 1.357rem, 2rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Large in-card heading (reference "h2-h3") */
+.card-h2 {
+  font-size: clamp(2rem, 1.429vw + 1.714rem, 3rem);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.section-h4 {
+  font-size: clamp(1.25rem, 0.357vw + 1.179rem, 1.5rem);
+  line-height: 0.9;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Reference section rhythm: clamp(5rem → 10rem) vertical padding */
+.section-pad {
+  padding-top: clamp(5rem, 7.143vw + 3.571rem, 10rem);
+  padding-bottom: clamp(5rem, 7.143vw + 3.571rem, 10rem);
+}
+
+/* Infinite marquee: rows are duplicated in markup, each row slides one full width */
+@keyframes marquee-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-row {
+  animation: marquee-slide var(--marquee-duration, 40s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-row {
+    animation: none;
+  }
+}
+
+/* Horizontal edge fades for marquees */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+}
+
+/* Vertical masks matching the reference hero */
+.mask-fade-b {
+  -webkit-mask-image: linear-gradient(#000 63%, transparent 100%);
+  mask-image: linear-gradient(#000 63%, transparent 100%);
+}
+
+.mask-fade-y {
+  -webkit-mask-image: linear-gradient(transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+@keyframes card-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.card-float {
+  animation: card-float 6s ease-in-out infinite;
+}
+
+/* Progress ring for the auto-advancing feature tabs */
+@keyframes ring-fill {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Slow rotation for the orbiting record icons; icons counter-rotate to stay upright */
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-spin {
+  animation: orbit-spin 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-float,
+  .orbit-spin {
+    animation: none;
+  }
+}
+}

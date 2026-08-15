@@ -1,0 +1,70 @@
+export function AppleIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="none"
+      className={className}
+      aria-hidden
+    >
+      <path
+        d="M17.4988 6.98235C16.188 7.76471 15.3783 9.10588 15.3783 10.5961C15.3783 12.2725 16.4193 13.8 18 14.4333C17.6916 15.402 17.2289 16.2961 16.6506 17.1157C15.8024 18.2706 14.9157 19.4627 13.6048 19.4627C12.294 19.4627 11.9084 18.7176 10.3663 18.7176C8.86265 18.7176 8.32289 19.5 7.08916 19.5C5.85542 19.5 5.00723 18.4196 4.04337 17.0784C2.77108 15.2157 2.03855 13.0549 2 10.7824C2 7.09412 4.46747 5.11961 6.93494 5.11961C8.24578 5.11961 9.3253 5.93922 10.1349 5.93922C10.906 5.93922 12.1398 5.08235 13.6048 5.08235C15.147 5.0451 16.612 5.75294 17.4988 6.98235ZM12.9108 3.51765C13.5663 2.77255 13.9133 1.84118 13.9518 0.872549C13.9518 0.760784 13.9518 0.611765 13.9133 0.5C12.7952 0.611765 11.7542 1.13333 11.0217 1.95294C10.3663 2.66078 9.98072 3.5549 9.94217 4.52353C9.94217 4.63529 9.94217 4.74706 9.98072 4.85882C10.0578 4.85882 10.1735 4.89608 10.2506 4.89608C11.2916 4.82157 12.2554 4.3 12.9108 3.51765Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+// Google Play's four-colour play mark. Drawn in brand colours (not
+// currentColor) so it stays recognisable on both dark and light pills.
+export function GooglePlayIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <path
+        d="M3.6 1.81 13.79 12 3.6 22.19A1.5 1.5 0 0 1 3 20.98V3.02c0-.47.24-.9.6-1.21z"
+        fill="#00D7FE"
+      />
+      <path
+        d="M17.08 8.72 5.42 1.73a1.44 1.44 0 0 0-1.82.08L13.79 12l3.29-3.28z"
+        fill="#00F076"
+      />
+      <path
+        d="m17.08 15.28-3.29-3.28 3.29-3.28 3.92 2.35c.9.54.9 1.72 0 2.26l-3.92 2.35z"
+        fill="#FFBC00"
+      />
+      <path
+        d="m17.08 15.28-3.29-3.28L3.6 22.19c.5.44 1.24.5 1.82.08l11.66-6.99z"
+        fill="#FF3A44"
+      />
+    </svg>
+  );
+}
+
+export function TijarahWordmark({
+  className = "",
+  light = false,
+}: {
+  className?: string;
+  light?: boolean;
+}) {
+  return (
+    <span
+      className={`relative inline-block font-bold lowercase leading-none tracking-tight ${
+        light ? "text-white" : "text-[#221d8f]"
+      } ${className}`}
+      style={{
+        fontFamily:
+          'ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", sans-serif',
+      }}
+    >
+      {/* The "i" is amber in the brand mark — stem and dot both. The dotless ı
+          carries the stem color; the dot is drawn above it. */}
+      t<span className="relative text-[#f5b31e]">ı</span>jarah
+      <span
+        aria-hidden
+        className="absolute rounded-full bg-[#f5b31e]"
+        style={{ width: "0.15em", height: "0.15em", left: "0.63em", top: "0.12em" }}
+      />
+    </span>
+  );
+}
