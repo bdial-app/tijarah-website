@@ -16,7 +16,7 @@ function FloatCard({
   return (
     <div className={`js-hero-card absolute hidden xl:block ${className}`}>
       <div className="card-float" style={style}>
-        <div className="rounded-2xl bg-white/95 p-3.5 shadow-[0_16px_40px_-12px_rgba(31,32,37,0.22)] ring-1 ring-black/5 backdrop-blur">
+        <div className="rounded-2xl bg-white/95 p-3.5 shadow-[0_16px_40px_-12px_rgba(15,22,43,0.22)] ring-1 ring-black/5 backdrop-blur">
           {children}
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function FloatingCards() {
     <>
       <FloatCard className="left-[2.5%] top-[6%] w-[15%] min-w-[180px]" delay={0.4}>
         <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-[#f5b31e]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-[#FDC003]">
             <svg viewBox="0 0 16 16" className="h-4 w-4 fill-current" aria-hidden>
               <path d="M8 1.3l1.8 4.4 4.7.4-3.6 3.1 1.1 4.6L8 11.4l-4.1 2.4 1.1-4.6L1.5 6.1l4.7-.4L8 1.3z" />
             </svg>
@@ -67,7 +67,7 @@ export default function FloatingCards() {
           {[35, 55, 45, 70, 52, 88, 62].map((v, i) => (
             <span
               key={i}
-              className={`flex-1 rounded-sm ${i === 5 ? "bg-[#221d8f]" : "bg-ink/10"}`}
+              className={`flex-1 rounded-sm ${i === 5 ? "bg-[#0F162B]" : "bg-ink/10"}`}
               style={{ height: `${v}%` }}
             />
           ))}
@@ -130,7 +130,7 @@ export default function FloatingCards() {
           20% off first tiffin week
         </p>
         <div className="mt-2 h-1.5 w-full rounded-full bg-ink/10">
-          <div className="h-full w-[68%] rounded-full bg-[#f5b31e]" />
+          <div className="h-full w-[68%] rounded-full bg-[#FDC003]" />
         </div>
         <p className="mt-1.5 text-[10px] text-ink-60">34 of 50 claimed</p>
       </FloatCard>

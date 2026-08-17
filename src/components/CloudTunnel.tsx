@@ -99,10 +99,10 @@ export default function CloudTunnel({ className }: { className?: string }) {
 
     const drawSky = () => {
       const grad = ctx.createLinearGradient(0, 0, 0, h);
-      grad.addColorStop(0, "#69aee5");
-      grad.addColorStop(0.45, "#9ccbf0");
-      grad.addColorStop(0.8, "#d8ebf9");
-      grad.addColorStop(1, "#f3f6f7");
+      grad.addColorStop(0, "#7c90c0");
+      grad.addColorStop(0.45, "#afbdde");
+      grad.addColorStop(0.8, "#dee4f2");
+      grad.addColorStop(1, "#F3F5FA");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, w, h);
 

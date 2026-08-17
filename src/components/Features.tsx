@@ -21,7 +21,7 @@ function MetricCard({
   return (
     <div
       data-reveal
-      className={`flex flex-col overflow-hidden rounded-3xl bg-[#ebf0f8] ${tint}`}
+      className={`flex flex-col overflow-hidden rounded-3xl bg-[#EAEEF7] ${tint}`}
     >
       <div className="p-[clamp(2.5rem,0.714vw+2.357rem,3rem)] pb-0">
         <h3 className="section-h3">{title}</h3>
@@ -61,7 +61,7 @@ function ProviderCard({
   statColor: string;
 }) {
   return (
-    <div className="w-full overflow-hidden rounded-[2rem] bg-white shadow-[0_16px_40px_-16px_rgba(31,32,37,0.25)]">
+    <div className="w-full overflow-hidden rounded-[2rem] bg-white shadow-[0_16px_40px_-16px_rgba(15,22,43,0.25)]">
       <div className={`flex aspect-square items-center justify-center bg-gradient-to-br ${gradient}`}>
         <span className="text-[4rem] drop-shadow-sm">{emoji}</span>
       </div>
@@ -143,7 +143,7 @@ export default function Features() {
         {/* Three metric cards */}
         <div className="grid gap-6 lg:grid-cols-3">
           <MetricCard
-            tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(255,171,148,0.2)_90%,rgba(255,171,148,0.4))]"
+            tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(253,192,3,0.18)_90%,rgba(253,192,3,0.35))]"
             title="Discover"
             copy="Typo-friendly search that knows your area — find anything from tiffin services to henna artists."
             phone="home"
@@ -159,7 +159,7 @@ export default function Features() {
             }
           />
           <MetricCard
-            tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(65,94,238,0.2)_90%,rgba(65,94,238,0.4))]"
+            tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(51,71,127,0.2)_90%,rgba(51,71,127,0.4))]"
             title="Chat"
             copy="Message providers directly — real-time, with photos, read receipts, and typing indicators."
             phone="chat"
@@ -175,7 +175,7 @@ export default function Features() {
             }
           />
           <MetricCard
-            tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(49,206,1,0.2)_90%,rgba(49,206,1,0.4))]"
+            tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(122,141,186,0.25)_90%,rgba(122,141,186,0.45))]"
             title="Trust"
             copy="Real ratings and reviews from your community, moderated with care."
             phone="provider"
@@ -197,7 +197,7 @@ export default function Features() {
         {/* Horizontal: women-led hub (text left, images right) */}
         <div
           data-reveal
-          className="flex flex-col overflow-hidden rounded-3xl bg-[#ebf0f8] [background-image:linear-gradient(rgba(255,255,255,0),rgba(185,166,255,0.4)_90%,rgba(185,166,255,0.4))] lg:aspect-[1360/650] lg:flex-row lg:items-center"
+          className="flex flex-col overflow-hidden rounded-3xl bg-[#EAEEF7] [background-image:linear-gradient(rgba(255,255,255,0),rgba(159,174,206,0.45)_90%,rgba(159,174,206,0.45))] lg:aspect-[1360/650] lg:flex-row lg:items-center"
         >
           <div className="w-full p-[clamp(2.5rem,0.714vw+2.357rem,3rem)] lg:w-[clamp(23.125rem,18.214vw+19.482rem,35.875rem)] lg:pl-12">
             <h3 className="card-h2">Women-led, front and center</h3>
@@ -233,7 +233,7 @@ export default function Features() {
         {/* Horizontal: verification (images left, text right) */}
         <div
           data-reveal
-          className="flex flex-col overflow-hidden rounded-3xl bg-[#ebf0f8] [background-image:linear-gradient(rgba(255,255,255,0),rgba(131,227,222,0.2)_90%,rgba(131,227,222,0.4))] lg:aspect-[1360/650] lg:flex-row-reverse lg:items-center"
+          className="flex flex-col overflow-hidden rounded-3xl bg-[#EAEEF7] [background-image:linear-gradient(rgba(255,255,255,0),rgba(253,192,3,0.12)_90%,rgba(253,192,3,0.25))] lg:aspect-[1360/650] lg:flex-row-reverse lg:items-center"
         >
           <div className="w-full p-[clamp(2.5rem,0.714vw+2.357rem,3rem)] lg:w-[clamp(23.125rem,15.536vw+20.018rem,34rem)] lg:pr-12">
             <h3 className="card-h2">Verified, so you can trust who you hire</h3>
@@ -253,7 +253,7 @@ export default function Features() {
               <PhoneMockup variant="provider" />
             </div>
             {/* Floating verification cards */}
-            <div className="absolute right-[8%] top-[14%] w-[34%] max-w-[13rem] rotate-[5deg] rounded-2xl bg-white p-4 shadow-[0_16px_40px_-16px_rgba(31,32,37,0.35)]">
+            <div className="absolute right-[8%] top-[14%] w-[34%] max-w-[13rem] rotate-[5deg] rounded-2xl bg-white p-4 shadow-[0_16px_40px_-16px_rgba(15,22,43,0.35)]">
               <p className="text-[0.7rem] font-semibold uppercase tracking-wider text-ink-40">
                 Aadhaar
               </p>
@@ -264,7 +264,7 @@ export default function Features() {
               </div>
               <p className="mt-2 text-[0.85rem] font-semibold text-emerald-600">✓ Verified</p>
             </div>
-            <div className="absolute bottom-[12%] left-[6%] w-[32%] max-w-[12rem] -rotate-[10deg] rounded-2xl bg-white p-4 shadow-[0_16px_40px_-16px_rgba(31,32,37,0.35)]">
+            <div className="absolute bottom-[12%] left-[6%] w-[32%] max-w-[12rem] -rotate-[10deg] rounded-2xl bg-white p-4 shadow-[0_16px_40px_-16px_rgba(15,22,43,0.35)]">
               <p className="text-[0.7rem] font-semibold uppercase tracking-wider text-ink-40">
                 iJamat card
               </p>

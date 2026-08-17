@@ -54,7 +54,7 @@ export default function Stats() {
     <section className="px-[clamp(1rem,1.429vw+0.714rem,2rem)]">
       <div
         ref={ref}
-        className="mx-auto grid max-w-[90rem] gap-y-12 rounded-3xl bg-white px-[clamp(1.5rem,3vw,4rem)] py-[clamp(3rem,4vw,5rem)] shadow-[0_32px_64px_-32px_rgba(31,32,37,0.18)] sm:grid-cols-2 lg:grid-cols-4"
+        className="mx-auto grid max-w-[90rem] gap-y-12 rounded-3xl bg-white px-[clamp(1.5rem,3vw,4rem)] py-[clamp(3rem,4vw,5rem)] shadow-[0_32px_64px_-32px_rgba(15,22,43,0.18)] sm:grid-cols-2 lg:grid-cols-4"
       >
         {stats.map((s) => (
           <div

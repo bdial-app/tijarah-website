@@ -54,7 +54,7 @@ export default function Team() {
             <div
               key={p.name}
               data-reveal
-              className="flex flex-col gap-4 rounded-3xl bg-white p-6 shadow-[0_24px_48px_-32px_rgba(31,32,37,0.28)]"
+              className="flex flex-col gap-4 rounded-3xl bg-white p-6 shadow-[0_24px_48px_-32px_rgba(15,22,43,0.28)]"
             >
               <div
                 className={`flex aspect-[4/3] items-center justify-center rounded-2xl bg-gradient-to-br ${p.gradient}`}
@@ -77,7 +77,7 @@ export default function Team() {
         {/* Hiring nudge */}
         <div
           data-reveal
-          className="flex flex-col items-center gap-4 rounded-3xl bg-brand-deep px-6 py-12 text-center text-white [background-image:radial-gradient(circle_at_50%_0,rgba(255,255,255,0)_40%,rgba(245,179,30,0.2)_90%,rgba(245,179,30,0.4))]"
+          className="flex flex-col items-center gap-4 rounded-3xl bg-brand-deep px-6 py-12 text-center text-white [background-image:radial-gradient(circle_at_50%_0,rgba(255,255,255,0)_40%,rgba(253,192,3,0.2)_90%,rgba(253,192,3,0.4))]"
         >
           <h3 className="card-h2">We&apos;re hiring</h3>
           <p className="max-w-md text-[1.05rem] text-white/60">

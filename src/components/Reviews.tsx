@@ -35,7 +35,7 @@ function Stars() {
 
 function ReviewCard({ r }: { r: Review }) {
   return (
-    <div className="w-[20rem] flex-none rounded-2xl bg-white p-6 shadow-[0_12px_32px_-16px_rgba(31,32,37,0.15)] ring-1 ring-black/5 sm:w-[24rem]">
+    <div className="w-[20rem] flex-none rounded-2xl bg-white p-6 shadow-[0_12px_32px_-16px_rgba(15,22,43,0.15)] ring-1 ring-black/5 sm:w-[24rem]">
       <Stars />
       <p className="mt-3 text-[1.05rem] font-semibold">{r.title}</p>
       <p className="mt-1 text-[0.8rem] text-ink-40">

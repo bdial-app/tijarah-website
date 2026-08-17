@@ -15,8 +15,8 @@ function StarRating() {
       <svg viewBox="0 0 80 16" className="w-20" aria-label="4.8 star rating">
         <defs>
           <linearGradient id="star-partial">
-            <stop offset="80%" stopColor="#FECC00" />
-            <stop offset="80%" stopColor="rgba(31,32,37,0.25)" />
+            <stop offset="80%" stopColor="#FDC003" />
+            <stop offset="80%" stopColor="rgba(15,22,43,0.25)" />
           </linearGradient>
         </defs>
         {[0, 1, 2, 3, 4].map((i) => (
@@ -24,7 +24,7 @@ function StarRating() {
             key={i}
             transform={`translate(${i * 16} 0)`}
             d="M8 1.3l1.8 4.4 4.7.4-3.6 3.1 1.1 4.6L8 11.4l-4.1 2.4 1.1-4.6L1.5 6.1l4.7-.4L8 1.3z"
-            fill={i < 4 ? "#FECC00" : "url(#star-partial)"}
+            fill={i < 4 ? "#FDC003" : "url(#star-partial)"}
           />
         ))}
       </svg>
@@ -86,7 +86,7 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} className="flex min-h-svh px-2 pt-2">
-      <div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-[#eef5fa] pt-28 md:pt-36">
+      <div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-[#ECF1F9] pt-28 md:pt-36">
         <div ref={cloudsRef} className="absolute inset-0">
           <CloudTunnel className="mask-fade-y absolute inset-0 h-full w-full" />
         </div>
@@ -135,7 +135,7 @@ export default function Hero() {
 
             <div className="pointer-events-none absolute left-[57.5%] top-[34%] z-10 hidden w-[16%] md:block">
               <div className="flex flex-col gap-2">
-                <div className="js-hero-card rounded-2xl bg-white/70 p-3 shadow-[0_16px_40px_-12px_rgba(31,32,37,0.22)] ring-1 ring-black/5 backdrop-blur">
+                <div className="js-hero-card rounded-2xl bg-white/70 p-3 shadow-[0_16px_40px_-12px_rgba(15,22,43,0.22)] ring-1 ring-black/5 backdrop-blur">
                   <p className="text-[12px] font-semibold leading-tight">
                     🔥 New lead &mdash; Wedding mehndi
                   </p>
@@ -143,7 +143,7 @@ export default function Hero() {
                     Mumbai · just now
                   </p>
                 </div>
-                <div className="js-hero-card rounded-2xl bg-white/70 p-3 shadow-[0_16px_40px_-12px_rgba(31,32,37,0.22)] ring-1 ring-black/5 backdrop-blur">
+                <div className="js-hero-card rounded-2xl bg-white/70 p-3 shadow-[0_16px_40px_-12px_rgba(15,22,43,0.22)] ring-1 ring-black/5 backdrop-blur">
                   <p className="text-[12px] font-semibold leading-tight">
                     💬 3 new messages
                   </p>

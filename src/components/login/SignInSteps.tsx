@@ -35,7 +35,7 @@ export default function SignInSteps() {
             <div
               key={step.title}
               data-reveal
-              className="flex flex-col gap-4 rounded-3xl bg-white p-7 shadow-[0_24px_48px_-32px_rgba(31,32,37,0.28)] transition-transform duration-500 hover:-translate-y-1"
+              className="flex flex-col gap-4 rounded-3xl bg-white p-7 shadow-[0_24px_48px_-32px_rgba(15,22,43,0.28)] transition-transform duration-500 hover:-translate-y-1"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/8 text-[1.15rem] font-semibold text-brand">
                 {i + 1}

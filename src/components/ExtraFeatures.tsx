@@ -23,7 +23,7 @@ const features = [
 function FeatureScreen({ f, active }: { f: (typeof features)[number]; active: boolean }) {
   return (
     <div
-      className={`absolute inset-0 flex flex-col bg-[#f6f7f9] transition-opacity duration-500 ${
+      className={`absolute inset-0 flex flex-col bg-[#F4F6FA] transition-opacity duration-500 ${
         active ? "opacity-100" : "opacity-0"
       }`}
       aria-hidden={!active}
@@ -35,22 +35,22 @@ function FeatureScreen({ f, active }: { f: (typeof features)[number]; active: bo
         </p>
       </div>
       <div className="flex-1 space-y-[3cqw] p-[6cqw]">
-        <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(31,32,37,0.06)]">
+        <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
           <div className="h-[2.4cqw] w-[55%] rounded-full bg-ink/15" />
           <div className="mt-[2.4cqw] h-[2.4cqw] w-[80%] rounded-full bg-ink/8" />
           <div className="mt-[2.4cqw] h-[2.4cqw] w-[68%] rounded-full bg-ink/8" />
         </div>
         <div className="flex gap-[3cqw]">
-          <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(31,32,37,0.06)]">
+          <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
             <div className="h-[7cqw] w-[7cqw] rounded-full bg-ink/10" />
             <div className="mt-[2.4cqw] h-[2.4cqw] w-[85%] rounded-full bg-ink/10" />
           </div>
-          <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(31,32,37,0.06)]">
+          <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
             <div className="h-[7cqw] w-[7cqw] rounded-full bg-ink/10" />
             <div className="mt-[2.4cqw] h-[2.4cqw] w-[70%] rounded-full bg-ink/10" />
           </div>
         </div>
-        <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(31,32,37,0.06)]">
+        <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
           <div className="h-[2.4cqw] w-[40%] rounded-full bg-ink/15" />
           <div className="mt-[3cqw] flex h-[10cqw] items-end gap-[1.8cqw]">
             {[40, 70, 55, 90, 62, 80, 48].map((v, i) => (
@@ -127,12 +127,12 @@ export default function ExtraFeatures() {
           {/* Phone preview */}
           <div className="flex justify-center">
             <div className="w-[68%] max-w-[20rem] [container-type:inline-size]">
-              <div className="relative aspect-[392/852] w-full rounded-[14cqw] bg-[#17181c] p-[2.4cqw] shadow-[0_40px_80px_-20px_rgba(31,32,37,0.4)]">
-                <div className="relative h-full w-full overflow-hidden rounded-[11.8cqw] bg-[#f6f7f9]">
+              <div className="relative aspect-[392/852] w-full rounded-[14cqw] bg-[#0F162B] p-[2.4cqw] shadow-[0_40px_80px_-20px_rgba(15,22,43,0.4)]">
+                <div className="relative h-full w-full overflow-hidden rounded-[11.8cqw] bg-[#F4F6FA]">
                   {features.map((f, i) => (
                     <FeatureScreen key={f.title} f={f} active={i === active} />
                   ))}
-                  <div className="absolute left-1/2 top-[1.6cqw] h-[6.4cqw] w-[24cqw] -translate-x-1/2 rounded-full bg-[#17181c]" />
+                  <div className="absolute left-1/2 top-[1.6cqw] h-[6.4cqw] w-[24cqw] -translate-x-1/2 rounded-full bg-[#0F162B]" />
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ export default function ExtraFeatures() {
                   type="button"
                   onClick={() => setActive(i)}
                   className={`flex items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left transition-colors duration-300 ${
-                    isActive ? "bg-white shadow-[0_8px_24px_-12px_rgba(31,32,37,0.18)]" : "hover:bg-white/50"
+                    isActive ? "bg-white shadow-[0_8px_24px_-12px_rgba(15,22,43,0.18)]" : "hover:bg-white/50"
                   }`}
                 >
                   <span>
@@ -166,7 +166,7 @@ export default function ExtraFeatures() {
                   </span>
                   <span className="relative h-9 w-9 flex-none">
                     <svg viewBox="0 0 36 36" className="h-full w-full -rotate-90">
-                      <circle cx="18" cy="18" r={RADIUS} fill="none" stroke="rgba(34,35,38,0.12)" strokeWidth="2.5" />
+                      <circle cx="18" cy="18" r={RADIUS} fill="none" stroke="rgba(15,22,43,0.12)" strokeWidth="2.5" />
                       {isActive && (
                         <circle
                           key={`${active}-${running}`}
@@ -174,7 +174,7 @@ export default function ExtraFeatures() {
                           cy="18"
                           r={RADIUS}
                           fill="none"
-                          stroke="#1f2025"
+                          stroke="#0F162B"
                           strokeWidth="2.5"
                           strokeLinecap="round"
                           strokeDasharray={CIRC}

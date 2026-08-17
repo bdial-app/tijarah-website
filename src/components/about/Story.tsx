@@ -38,7 +38,7 @@ export default function Story() {
         </div>
 
         <div data-reveal className="relative">
-          <div className="rounded-3xl bg-white p-5 shadow-[0_32px_64px_-24px_rgba(31,32,37,0.22)] ring-1 ring-black/5">
+          <div className="rounded-3xl bg-white p-5 shadow-[0_32px_64px_-24px_rgba(15,22,43,0.22)] ring-1 ring-black/5">
             <div className="flex items-center gap-3 border-b border-ink/10 pb-4">
               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-amber-200 to-orange-400 text-[1.1rem]">
                 👥
@@ -79,7 +79,7 @@ export default function Story() {
           </div>
 
           {/* The answer the thread never had */}
-          <div className="card-float absolute -bottom-6 -right-2 w-[62%] rounded-2xl bg-brand-deep p-4 shadow-[0_24px_48px_-16px_rgba(23,16,96,0.5)] sm:-right-6">
+          <div className="card-float absolute -bottom-6 -right-2 w-[62%] rounded-2xl bg-brand-deep p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.5)] sm:-right-6">
             <p className="text-[0.72rem] font-semibold uppercase tracking-wider text-amber">
               Tijarah
             </p>

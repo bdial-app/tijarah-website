@@ -50,7 +50,7 @@ export function TijarahWordmark({
   return (
     <span
       className={`relative inline-block font-bold lowercase leading-none tracking-tight ${
-        light ? "text-white" : "text-[#221d8f]"
+        light ? "text-white" : "text-[#0F162B]"
       } ${className}`}
       style={{
         fontFamily:
@@ -59,10 +59,10 @@ export function TijarahWordmark({
     >
       {/* The "i" is amber in the brand mark — stem and dot both. The dotless ı
           carries the stem color; the dot is drawn above it. */}
-      t<span className="relative text-[#f5b31e]">ı</span>jarah
+      t<span className="relative text-[#FDC003]">ı</span>jarah
       <span
         aria-hidden
-        className="absolute rounded-full bg-[#f5b31e]"
+        className="absolute rounded-full bg-[#FDC003]"
         style={{ width: "0.15em", height: "0.15em", left: "0.63em", top: "0.12em" }}
       />
     </span>

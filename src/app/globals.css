@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --page: #f3f6f7;
-  --ink: #222326;
-  --ink-60: rgba(34, 35, 38, 0.6);
-  --ink-40: rgba(34, 35, 38, 0.4);
-  --btn-bg: #1f2025;
-  --btn-fg: #ebf0f8;
-  --star: #fecc00;
-  --brand: #221d8f;
-  --brand-deep: #171060;
-  --brand-bright: #2f2ba8;
-  --amber: #f5b31e;
+  --page: #f3f5fa;
+  --ink: #0f162b;
+  --ink-60: rgba(15, 22, 43, 0.62);
+  --ink-40: rgba(15, 22, 43, 0.42);
+  --btn-bg: #0f162b;
+  --btn-fg: #f2f5fc;
+  --star: #fdc003;
+  --brand: #0f162b;
+  --brand-deep: #0a0f20;
+  --brand-bright: #33477f;
+  --amber: #fdc003;
 }
 
 @theme inline {
@@ -24,6 +24,80 @@
   --color-brand-deep: var(--brand-deep);
   --color-brand-bright: var(--brand-bright);
   --color-amber: var(--amber);
+}
+
+/* Duotone brand remap: every stock Tailwind hue used in the components is
+   re-pointed at a navy (#0F162B) or gold (#FDC003) ramp so the markup —
+   and therefore the design — stays untouched while the theme changes. */
+@theme {
+  /* Gold ramp (amber / yellow) */
+  --color-amber-100: #fff3c7;
+  --color-amber-200: #fee690;
+  --color-amber-300: #fed64a;
+  --color-amber-400: #fdc003;
+  --color-amber-500: #efb300;
+  --color-amber-600: #c69500;
+  --color-amber-700: #977100;
+  --color-yellow-200: #feea9b;
+  --color-yellow-600: #c69500;
+
+  /* Deep gold (orange) */
+  --color-orange-100: #fcefb8;
+  --color-orange-200: #fbe099;
+  --color-orange-300: #f3c64b;
+  --color-orange-400: #e9ac00;
+  --color-orange-600: #a97e00;
+
+  /* Soft gold (rose / pink / fuchsia) */
+  --color-rose-200: #fde9a4;
+  --color-rose-300: #fbd968;
+  --color-rose-400: #f3bc1c;
+  --color-rose-500: #dda400;
+  --color-pink-300: #f8d45c;
+  --color-pink-400: #efb512;
+  --color-pink-600: #b58600;
+  --color-fuchsia-200: #fce59b;
+
+  /* Navy ramp (blue / indigo / violet / purple / sky) */
+  --color-blue-300: #9faece;
+  --color-blue-400: #6e82b0;
+  --color-blue-600: #2a3a69;
+  --color-indigo-200: #c2cce3;
+  --color-indigo-400: #67799f;
+  --color-indigo-600: #26365f;
+  --color-violet-100: #e6eaf5;
+  --color-violet-200: #cbd4e8;
+  --color-violet-400: #7284b2;
+  --color-violet-600: #2c3c6c;
+  --color-violet-700: #1e2b52;
+  --color-purple-300: #a2b0d0;
+  --color-purple-400: #7080ae;
+  --color-purple-600: #283867;
+  --color-sky-200: #cfd8ea;
+  --color-sky-400: #7a8dba;
+
+  /* Airy navy (teal / emerald / green / lime) */
+  --color-teal-200: #d3dbec;
+  --color-teal-400: #7e91be;
+  --color-emerald-50: #f1f4fa;
+  --color-emerald-100: #e4e9f4;
+  --color-emerald-200: #cbd3e7;
+  --color-emerald-300: #a3b1d0;
+  --color-emerald-400: #7386b3;
+  --color-emerald-500: #4a5d90;
+  --color-emerald-600: #2e3e6d;
+  --color-emerald-700: #202e55;
+  --color-emerald-800: #17233f;
+  --color-green-300: #a0aece;
+  --color-green-400: #6f83b1;
+  --color-green-600: #24355f;
+  --color-lime-200: #d5dded;
+
+  /* Navy-cast neutrals (stone) */
+  --color-stone-200: #e2e5ee;
+  --color-stone-300: #c6cbd9;
+  --color-stone-400: #9aa1b5;
+  --color-stone-600: #575f78;
 }
 
 body {
@@ -81,7 +155,7 @@ body {
   aspect-ratio: 1;
   opacity: 0.6;
   pointer-events: none;
-  background-image: radial-gradient(circle farthest-side, #ebf0f8, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle farthest-side, #fdc003, rgba(253, 192, 3, 0));
   transition: opacity 0.6s cubic-bezier(0.19, 1, 0.22, 1), top 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 

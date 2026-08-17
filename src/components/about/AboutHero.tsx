@@ -16,7 +16,7 @@ const rings = [
 function OrbitRing() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-[38rem]" aria-hidden>
-      <div className="absolute inset-[22%] rounded-full bg-[radial-gradient(circle,rgba(34,29,143,0.16),transparent_70%)]" />
+      <div className="absolute inset-[22%] rounded-full bg-[radial-gradient(circle,rgba(15,22,43,0.16),transparent_70%)]" />
 
       {rings.map((ring) => (
         <div
@@ -40,7 +40,7 @@ function OrbitRing() {
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
                   <div style={{ transform: `rotate(${-angle}deg)` }}>
                     <div
-                      className="orbit-spin flex h-[clamp(2.75rem,4.5vw,3.75rem)] w-[clamp(2.75rem,4.5vw,3.75rem)] items-center justify-center rounded-2xl bg-white/80 text-[clamp(1.1rem,1.8vw,1.5rem)] shadow-[0_12px_32px_-12px_rgba(31,32,37,0.28)] backdrop-blur"
+                      className="orbit-spin flex h-[clamp(2.75rem,4.5vw,3.75rem)] w-[clamp(2.75rem,4.5vw,3.75rem)] items-center justify-center rounded-2xl bg-white/80 text-[clamp(1.1rem,1.8vw,1.5rem)] shadow-[0_12px_32px_-12px_rgba(15,22,43,0.28)] backdrop-blur"
                       style={{
                         animationDuration: ring.duration,
                         animationDirection: ring.reverse ? "normal" : "reverse",
@@ -57,7 +57,7 @@ function OrbitRing() {
       ))}
 
       {/* Brand mark at the centre */}
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3 rounded-full bg-white/70 p-[clamp(1.5rem,3vw,2.75rem)] shadow-[0_24px_60px_-24px_rgba(31,32,37,0.35)] backdrop-blur">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3 rounded-full bg-white/70 p-[clamp(1.5rem,3vw,2.75rem)] shadow-[0_24px_60px_-24px_rgba(15,22,43,0.35)] backdrop-blur">
         <Image
           src={logo}
           alt=""
@@ -86,7 +86,7 @@ export default function AboutHero() {
 
   return (
     <section className="flex px-2 pt-2">
-      <div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-[#eef5fa] px-4 pb-[clamp(3rem,6vw,6rem)] pt-32 md:pt-40">
+      <div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-[#ECF1F9] px-4 pb-[clamp(3rem,6vw,6rem)] pt-32 md:pt-40">
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
           <p
             data-hero-reveal

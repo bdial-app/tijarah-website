@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     // code itself only needs a hairline margin — every module stays as large
     // as possible, which is what makes it scan at this size.
     margin: 1,
-    color: { dark: "#171060ff", light: "#00000000" },
+    color: { dark: "#0F162Bff", light: "#00000000" },
   });
 
   return new Response(svg, {

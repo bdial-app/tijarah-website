@@ -55,11 +55,11 @@ export default function LoginHero() {
 
   return (
     <section className="flex px-2 pt-2">
-      <div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-[#eef5fa] px-[clamp(1rem,3vw,3.5rem)] pb-[clamp(3rem,6vw,6rem)] pt-32 md:pt-40">
+      <div className="relative flex w-full flex-col overflow-hidden rounded-3xl bg-[#ECF1F9] px-[clamp(1rem,3vw,3.5rem)] pb-[clamp(3rem,6vw,6rem)] pt-32 md:pt-40">
         {/* Soft brand glow behind the phone */}
         <div
           aria-hidden
-          className="pointer-events-none absolute right-[-10%] top-[10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,rgba(34,29,143,0.14),transparent_68%)]"
+          className="pointer-events-none absolute right-[-10%] top-[10%] h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle,rgba(15,22,43,0.14),transparent_68%)]"
         />
 
         <div className="relative z-10 mx-auto grid w-full max-w-[80rem] items-center gap-[clamp(3rem,5vw,5rem)] lg:grid-cols-[1.05fr_0.95fr]">
@@ -98,7 +98,7 @@ export default function LoginHero() {
             {/* Scan-to-download, mirroring the corner card on other pages */}
             <div
               data-hero-reveal
-              className="mt-2 flex items-center gap-4 rounded-3xl bg-white/80 p-4 pr-6 shadow-[0_24px_48px_-28px_rgba(31,32,37,0.35)] backdrop-blur"
+              className="mt-2 flex items-center gap-4 rounded-3xl bg-white/80 p-4 pr-6 shadow-[0_24px_48px_-28px_rgba(15,22,43,0.35)] backdrop-blur"
             >
               <div className="h-28 w-28 rounded-xl bg-white p-2 ring-1 ring-ink/5">
                 <QrPattern />
@@ -122,7 +122,7 @@ export default function LoginHero() {
 
             <div
               data-hero-chip
-              className="absolute left-0 top-[18%] flex items-center gap-2.5 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(31,32,37,0.3)] ring-1 ring-black/5 backdrop-blur"
+              className="absolute left-0 top-[18%] flex items-center gap-2.5 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(15,22,43,0.3)] ring-1 ring-black/5 backdrop-blur"
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-brand/8 text-brand">
                 <CheckBadge className="h-4.5 w-4.5" />
@@ -137,7 +137,7 @@ export default function LoginHero() {
 
             <div
               data-hero-chip
-              className="absolute right-0 top-[52%] flex items-center gap-2.5 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(31,32,37,0.3)] ring-1 ring-black/5 backdrop-blur"
+              className="absolute right-0 top-[52%] flex items-center gap-2.5 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(15,22,43,0.3)] ring-1 ring-black/5 backdrop-blur"
             >
               <span className="text-[1.1rem]">🔐</span>
               <div>
@@ -150,7 +150,7 @@ export default function LoginHero() {
 
             <div
               data-hero-chip
-              className="absolute bottom-[6%] left-[6%] flex items-center gap-3 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(31,32,37,0.3)] ring-1 ring-black/5 backdrop-blur"
+              className="absolute bottom-[6%] left-[6%] flex items-center gap-3 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(15,22,43,0.3)] ring-1 ring-black/5 backdrop-blur"
             >
               <AppleIcon className="h-4 w-4" />
               <span className="text-[0.78rem] font-semibold">App Store</span>

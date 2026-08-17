@@ -77,7 +77,7 @@ export default function QrCard() {
           touch device that reaches this width (iPad, Android tablet) can just
           tap through to its own store. */}
       <DownloadLink
-        className="flex items-center gap-4 rounded-3xl bg-brand-deep p-4 pr-6 shadow-[0_24px_48px_-16px_rgba(23,16,96,0.5)] ring-1 ring-white/15 transition-transform duration-300 hover:-translate-y-0.5"
+        className="flex items-center gap-4 rounded-3xl bg-brand-deep p-4 pr-6 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.5)] ring-1 ring-white/15 transition-transform duration-300 hover:-translate-y-0.5"
         ariaLabel="Download the Tijarah app"
       >
         {(platform) => (

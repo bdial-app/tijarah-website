@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className="js-nav fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <div className="relative w-full max-w-5xl md:w-auto">
-        <div className="flex w-full items-center justify-between gap-6 rounded-4xl bg-white/60 p-2 shadow-[0_8px_32px_-12px_rgba(31,32,37,0.12)] backdrop-blur-xl md:w-auto md:justify-center md:gap-10">
+        <div className="flex w-full items-center justify-between gap-6 rounded-4xl bg-white/60 p-2 shadow-[0_8px_32px_-12px_rgba(15,22,43,0.12)] backdrop-blur-xl md:w-auto md:justify-center md:gap-10">
           <Logo />
 
           <nav className="hidden items-center gap-8 text-[0.95rem] md:flex">
@@ -89,7 +89,7 @@ export default function Navbar() {
 
         {/* Mobile dropdown */}
         <div
-          className={`absolute inset-x-0 top-[calc(100%+0.5rem)] origin-top rounded-3xl bg-white/90 p-4 shadow-[0_24px_48px_-16px_rgba(31,32,37,0.25)] backdrop-blur-xl transition-all duration-300 md:hidden ${
+          className={`absolute inset-x-0 top-[calc(100%+0.5rem)] origin-top rounded-3xl bg-white/90 p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.25)] backdrop-blur-xl transition-all duration-300 md:hidden ${
             open
               ? "pointer-events-auto scale-100 opacity-100"
               : "pointer-events-none scale-95 opacity-0"

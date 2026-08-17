@@ -14,8 +14,8 @@ type Tone = "light" | "dark";
 const tones: Record<Tone, { apple: string; play: string }> = {
   // On the page background / pale panels: two solid pills.
   light: {
-    apple: "bg-brand text-[#ebf0f8]",
-    play: "bg-[#1f2025] text-[#ebf0f8]",
+    apple: "bg-brand text-[#EAEEF7]",
+    play: "bg-[#0F162B] text-[#EAEEF7]",
   },
   // On brand-deep panels: white pills so both read at the same weight.
   dark: {

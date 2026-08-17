@@ -45,12 +45,12 @@ type Card = {
 
 const cards: Card[] = [
   {
-    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(185,166,255,0.45),rgba(185,166,255,0.35)_10%,rgba(255,255,255,0)_64%)]",
+    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(114,132,178,0.45),rgba(114,132,178,0.35)_10%,rgba(255,255,255,0)_64%)]",
     title: "Know what's working",
     copy: "Track views, searches, calls, and saves — see exactly how customers find you.",
     phone: "analytics",
     chip: (
-      <div className="absolute -left-[28%] top-[18%] w-[70%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(31,32,37,0.35)]">
+      <div className="absolute -left-[28%] top-[18%] w-[70%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
         <p className="text-[0.75rem] text-ink-60">Search appearances</p>
         <p className="text-[1.05rem] font-semibold">+48% this week</p>
         <div className="mt-2 flex h-8 items-end gap-1">
@@ -62,14 +62,14 @@ const cards: Card[] = [
     ),
   },
   {
-    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(244,108,65,0.4),rgba(244,108,65,0.2)_10%,rgba(255,255,255,0)_64%)]",
+    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(253,192,3,0.4),rgba(253,192,3,0.2)_10%,rgba(255,255,255,0)_64%)]",
     title: "Never miss a lead",
     copy: "Hot, warm, and cold lead scoring shows you who's ready to book right now.",
     phone: "leads",
     chip: (
       <div className="absolute -right-[24%] top-[24%] flex w-[72%] flex-col gap-2">
         {[["🔥", "New hot lead", "Wedding mehndi · 2 min ago"]].map(([icon, title, sub]) => (
-          <div key={title} className="flex items-center gap-3 rounded-2xl bg-white p-3.5 shadow-[0_24px_48px_-16px_rgba(31,32,37,0.35)]">
+          <div key={title} className="flex items-center gap-3 rounded-2xl bg-white p-3.5 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
             <span className="text-[1.2rem]">{icon}</span>
             <span>
               <span className="block text-[0.85rem] font-semibold leading-tight">{title}</span>
@@ -81,28 +81,28 @@ const cards: Card[] = [
     ),
   },
   {
-    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(255,150,194,0.4),rgba(255,150,194,0.2)_10%,rgba(255,255,255,0)_64%)]",
+    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(243,188,28,0.4),rgba(243,188,28,0.2)_10%,rgba(255,255,255,0)_64%)]",
     title: "Deals that bring them in",
     copy: "Launch offers with quotas and expiry — then watch them convert.",
     phone: "home",
     chip: (
-      <div className="absolute -left-[26%] top-[30%] w-[68%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(31,32,37,0.35)]">
+      <div className="absolute -left-[26%] top-[30%] w-[68%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
         <p className="text-[0.95rem] font-semibold leading-snug">🎉 20% off first order</p>
         <p className="mt-1 text-[0.75rem] text-ink-60">34 of 50 claimed</p>
         <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ink/10">
-          <div className="h-full w-[68%] rounded-full bg-[#f5b31e]" />
+          <div className="h-full w-[68%] rounded-full bg-[#FDC003]" />
         </div>
       </div>
     ),
   },
   {
-    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(131,227,222,0.45),rgba(131,227,222,0.25)_10%,rgba(255,255,255,0)_64%)]",
+    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(158,174,206,0.45),rgba(158,174,206,0.25)_10%,rgba(255,255,255,0)_64%)]",
     title: "Get seen first",
     copy: "Sponsored listings put you at the top of search and the explore carousel.",
     phone: "provider",
     chip: (
-      <div className="absolute -right-[22%] top-[26%] w-[66%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(31,32,37,0.35)]">
-        <span className="inline-flex rounded-full bg-[#f5b31e]/15 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-amber-600">
+      <div className="absolute -right-[22%] top-[26%] w-[66%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
+        <span className="inline-flex rounded-full bg-[#FDC003]/15 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-amber-600">
           Sponsored
         </span>
         <p className="mt-2 text-[0.85rem] font-semibold">4.2k impressions this week</p>
@@ -158,7 +158,7 @@ export default function Intelligence() {
       {/* Shutter slats build the indigo background */}
       <div ref={shutterRef} className="absolute inset-0 -z-10 flex flex-col overflow-hidden" aria-hidden>
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="w-full flex-1 bg-[#171060]" />
+          <div key={i} className="w-full flex-1 bg-[#0F162B]" />
         ))}
       </div>
       {/* Subtle brand-bright glow over the slats */}
@@ -166,7 +166,7 @@ export default function Intelligence() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 25%, rgba(47,43,168,0.5), transparent 65%)",
+            "radial-gradient(ellipse at 50% 25%, rgba(51,71,127,0.5), transparent 65%)",
         }}
         aria-hidden
       />
@@ -178,7 +178,7 @@ export default function Intelligence() {
             className="pointer-events-none absolute -top-[8rem] h-[24rem] w-[min(43rem,100%)] rounded-full opacity-60 blur-3xl"
             style={{
               background:
-                "radial-gradient(circle at 50% 40%, rgba(63,255,194,0.25), rgba(65,94,238,0.18) 45%, transparent 70%)",
+                "radial-gradient(circle at 50% 40%, rgba(253,192,3,0.25), rgba(110,130,176,0.2) 45%, transparent 70%)",
             }}
             aria-hidden
           />
