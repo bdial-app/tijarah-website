@@ -1,10 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import StoreButtons from "./StoreButtons";
 import { AppleIcon, GooglePlayIcon, TijarahWordmark } from "./icons";
 import { APP_STORE_URL, PLAY_STORE_URL, isExternalUrl } from "@/lib/store-links";
-import logo from "@/assests/Frame 7.png";
 
 // Links without an href aren't built yet and fall back to "#".
 const columns: Array<{
@@ -18,8 +16,8 @@ const columns: Array<{
   {
     heading: "Get the app",
     links: [
-      { label: "Download on the App Store", href: APP_STORE_URL },
-      { label: "Get it on Google Play", href: PLAY_STORE_URL },
+      { label: "App Store", href: APP_STORE_URL },
+      { label: "Google Play", href: PLAY_STORE_URL },
       { label: "Sign in", href: "/login" },
       { label: "System requirements", href: "/login" },
     ],
@@ -67,48 +65,49 @@ export default function Footer() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-ink/10">
-        <div className="mx-auto max-w-[90rem] px-[clamp(1.5rem,2vw,3rem)] py-14">
-          <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
-            <div className="flex flex-col gap-6">
-              <Link href="/" className="flex items-center gap-3" aria-label="Tijarah home">
-                <Image src={logo} alt="Tijarah logo" className="h-12 w-12 rounded-2xl" />
-                <TijarahWordmark className="text-[1.25rem]" />
+      <footer className="relative overflow-hidden bg-brand text-white [background-image:radial-gradient(70rem_28rem_at_50%_0%,rgba(253,192,3,0.1),transparent)]">
+        {/* Hairline of brand gold along the very top edge */}
+        <div
+          className="absolute inset-x-0 top-0 h-px [background:linear-gradient(90deg,transparent,rgba(253,192,3,0.5),transparent)]"
+          aria-hidden
+        />
+
+        <div className="mx-auto max-w-[90rem] px-[clamp(1.5rem,2vw,3rem)] pb-10 pt-16">
+          <div className="flex flex-col gap-14 lg:flex-row lg:justify-between lg:gap-20">
+            {/* Brand: the wordmark carries the lockup on its own — the tile
+                version disappears against the navy. */}
+            <div className="flex max-w-sm flex-col items-start gap-6">
+              <Link href="/" aria-label="Tijarah home">
+                <TijarahWordmark className="text-[1.65rem]" light />
               </Link>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-ink-60 [&_a]:whitespace-nowrap">
-                <span className="text-[0.8rem] font-semibold uppercase tracking-wider text-ink-40">
-                  Available on
-                </span>
-                <Link href="/login" className="flex items-center gap-1.5 text-[0.9rem] transition-opacity hover:opacity-60">
+              <p className="text-[0.98rem] leading-relaxed text-white/55">
+                Your community, connected. Verified providers, reviews you can
+                trust, and no commission on a single booking.
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                <Link href="/login" className="footer-pill">
                   <AppleIcon className="h-4 w-4" />
                   App Store
                 </Link>
-                <Link href="/login" className="flex items-center gap-1.5 text-[0.9rem] transition-opacity hover:opacity-60">
+                <Link href="/login" className="footer-pill">
                   <GooglePlayIcon className="h-4 w-4" />
                   Google Play
                 </Link>
               </div>
-              <p className="text-[0.85rem] text-ink-40">© Tijarah, 2026</p>
-              <div className="flex gap-5">
-                {socials.map((s) => (
-                  <a key={s} href="#" className="text-[0.9rem] text-ink-60 transition-opacity hover:opacity-60">
-                    {s}
-                  </a>
-                ))}
-              </div>
             </div>
-            <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-14">
+
+            <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-12">
               {columns.map((col) => (
                 <div key={col.heading}>
-                  <p className="text-[0.8rem] font-semibold uppercase tracking-wider text-ink-40">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-amber">
                     {col.heading}
                   </p>
-                  <ul className="mt-4 space-y-2.5">
+                  <ul className="mt-5 space-y-3">
                     {col.links.map((l) => (
                       <li key={l.label}>
                         <Link
                           href={l.href ?? "#"}
-                          className="text-[0.95rem] transition-opacity hover:opacity-60"
+                          className="text-[0.95rem] text-white/65 transition-colors duration-200 hover:text-amber"
                           {...(isExternalUrl(l.href ?? "")
                             ? { target: "_blank", rel: "noopener noreferrer" }
                             : {})}
@@ -119,6 +118,20 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-[0.85rem] text-white/40">
+              © Tijarah, 2026 · Built for the community, in India
+            </p>
+            <div className="flex flex-wrap gap-2.5">
+              {socials.map((s) => (
+                <a key={s} href="#" className="footer-pill">
+                  {s}
+                </a>
               ))}
             </div>
           </div>

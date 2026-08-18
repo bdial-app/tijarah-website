@@ -62,7 +62,7 @@ function CardRow({ reviews, reverse = false, ariaHidden = false }: { reviews: Re
 
 export default function Reviews() {
   return (
-    <section className="section-pad">
+    <section className="section-pad bg-amber [background-image:radial-gradient(80rem_40rem_at_50%_-10%,rgba(255,255,255,0.35),transparent)]">
       <Reveal className="flex flex-col gap-[clamp(2.5rem,3vw,5rem)]">
         <div data-reveal className="mx-auto flex max-w-3xl flex-col items-center gap-4 px-4 text-center">
           <h2 className="section-h2">
@@ -70,7 +70,7 @@ export default function Reviews() {
             <br />
             loved by the community
           </h2>
-          <p className="max-w-lg text-[1.125rem] text-ink-60">
+          <p className="max-w-lg text-[1.125rem] text-ink/75">
             Don&apos;t take our word for it. See why Tijarah is trusted by
             community members and business owners across the country.
           </p>

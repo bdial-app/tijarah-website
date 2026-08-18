@@ -190,6 +190,29 @@ body {
   opacity: 1;
 }
 
+/* Ghost pill used for the footer's store and social links: reads as a quiet
+   control on navy, and warms to brand gold on hover. */
+.footer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 8rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.5rem 1rem;
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s, transform 0.25s;
+}
+
+.footer-pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(253, 192, 3, 0.55);
+  background: rgba(253, 192, 3, 0.08);
+  color: #fdc003;
+}
+
 /* Section typography lifted from the reference */
 .section-h2 {
   font-size: clamp(2.5rem, 2.143vw + 2.071rem, 4rem);

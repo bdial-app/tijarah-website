@@ -3,7 +3,6 @@
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { TijarahWordmark } from "../icons";
 import logo from "@/assests/Frame 7.png";
 
 // Two counter-rotating rings of community trades orbiting the brand mark.
@@ -56,14 +55,13 @@ function OrbitRing() {
         </div>
       ))}
 
-      {/* Brand mark at the centre */}
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-3 rounded-full bg-white/70 p-[clamp(1.5rem,3vw,2.75rem)] shadow-[0_24px_60px_-24px_rgba(15,22,43,0.35)] backdrop-blur">
+      {/* Brand mark at the centre — the icon carries the name, so no wordmark */}
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 p-[clamp(1.5rem,3vw,2.75rem)] shadow-[0_24px_60px_-24px_rgba(15,22,43,0.35)] backdrop-blur">
         <Image
           src={logo}
           alt=""
           className="h-[clamp(3rem,5vw,4.5rem)] w-[clamp(3rem,5vw,4.5rem)] rounded-2xl"
         />
-        <TijarahWordmark className="text-[clamp(1rem,1.6vw,1.4rem)]" />
       </div>
     </div>
   );
