@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 
 // Completes the favicon set: the wordmark tiles are used for home-screen
 // installs, where there's room to read them. Tabs use favicon.ico instead.
+// Static export: emitted once at build time as /manifest.webmanifest.
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Tijarah — Your Community, Connected",
