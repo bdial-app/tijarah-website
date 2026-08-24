@@ -1,4 +1,15 @@
+import Image, { type StaticImageData } from "next/image";
 import Reveal from "./Reveal";
+import sweetTalksLogo from "@/assests/members/1.png";
+import taherLogo from "@/assests/members/2.png";
+import zainabLogo from "@/assests/members/zainab.png";
+import nisrinLogo from "@/assests/members/nisrin.png";
+import burhaniLogo from "@/assests/members/burhani.png";
+import mariyaLogo from "@/assests/members/mariya.png";
+import hakimiLogo from "@/assests/members/hakimi.png";
+import nafisaLogo from "@/assests/members/nafisa.png";
+import saifeeLogo from "@/assests/members/saifee.png";
+import tasneemLogo from "@/assests/members/tasneem.png";
 
 function Laurel({ flip = false }: { flip?: boolean }) {
   return (
@@ -63,29 +74,38 @@ type Merchant = {
   gradient: string;
   stat: string;
   delta?: string;
+  /** Merchant logo; replaces the emoji tile when set. */
+  logo?: StaticImageData;
+  /**
+   * For logos printed on a non-white ground: the artwork's own paper colour.
+   * The card is painted flat in this colour so the square blends in seamlessly.
+   * Leave unset for white-background logos, which multiply onto the tinted gradient.
+   */
+  paper?: string;
 };
 
 const merchants: Merchant[] = [
-  { name: "Zainab's Kitchen", city: "Mumbai", emoji: "🍱", gradient: "from-amber-200 via-orange-300 to-amber-500", stat: "4.9 ★ · 214 reviews", delta: "💜" },
-  { name: "Adv.Nisrin Dammerwala", city: "Pune", emoji: "🎨", gradient: "from-rose-200 via-rose-300 to-rose-500", stat: "312 bookings", delta: "💜" },
-  { name: "Taher Tailors", city: "Surat", emoji: "✂️", gradient: "from-stone-300 via-stone-400 to-stone-600", stat: "4.8 ★ · 190 reviews" },
-  { name: "Sakina's Bakes", city: "Hyderabad", emoji: "🎂", gradient: "from-fuchsia-200 via-pink-300 to-pink-600", stat: "1.2k saves", delta: "💜" },
-  { name: "Burhani Tutors", city: "Indore", emoji: "📚", gradient: "from-sky-200 via-blue-300 to-blue-600", stat: "86 students" },
-  { name: "Mariya Mehndi", city: "Ahmedabad", emoji: "🌸", gradient: "from-lime-200 via-green-300 to-green-600", stat: "Booked till Eid", delta: "💜" },
-  { name: "Hakimi Caterers", city: "Mumbai", emoji: "🍽️", gradient: "from-yellow-200 via-amber-300 to-orange-400", stat: "4.9 ★ · 128 events" },
-  { name: "Nafisa's Boutique", city: "Udaipur", emoji: "👗", gradient: "from-violet-200 via-purple-300 to-indigo-600", stat: "New collection", delta: "💜" },
-  { name: "Saifee Decor", city: "Pune", emoji: "🎈", gradient: "from-teal-200 via-emerald-300 to-emerald-600", stat: "140 events styled" },
-  { name: "Tasneem's Tiffins", city: "Kolkata", emoji: "🥘", gradient: "from-orange-200 via-amber-400 to-yellow-600", stat: "580 subscribers", delta: "💜" },
+  { name: "Zainab's Kitchen", city: "Mumbai", emoji: "🍱", gradient: "from-orange-50 via-orange-100 to-amber-200", stat: "4.9 ★ · 214 reviews", delta: "💜", logo: zainabLogo, paper: "#fdf2de" },
+  { name: "Adv.Nisrin Dammerwala", city: "Pune", emoji: "🎨", gradient: "from-slate-50 via-blue-100 to-indigo-200", stat: "312 bookings", delta: "💜", logo: nisrinLogo },
+  { name: "Taher Tailors", city: "Surat", emoji: "✂️", gradient: "from-stone-50 via-stone-100 to-stone-300", stat: "4.8 ★ · 190 reviews", logo: taherLogo },
+  { name: "Sweet Talks", city: "Hyderabad", emoji: "🍬", gradient: "from-green-50 via-emerald-100 to-lime-200", stat: "1.2k saves", delta: "💜", logo: sweetTalksLogo },
+  { name: "Burhani Tutors", city: "Indore", emoji: "📚", gradient: "from-sky-50 via-sky-100 to-blue-200", stat: "86 students", logo: burhaniLogo },
+  { name: "Mariya Mehndi", city: "Ahmedabad", emoji: "🌸", gradient: "from-rose-50 via-rose-100 to-pink-200", stat: "Booked till Eid", delta: "💜", logo: mariyaLogo, paper: "#fdf3e3" },
+  { name: "Hakimi Caterers", city: "Mumbai", emoji: "🍽️", gradient: "from-amber-50 via-yellow-100 to-amber-200", stat: "4.9 ★ · 128 events", logo: hakimiLogo, paper: "#fcf4e5" },
+  { name: "Nafisa's Boutique", city: "Udaipur", emoji: "👗", gradient: "from-purple-50 via-violet-100 to-purple-200", stat: "New collection", delta: "💜", logo: nafisaLogo, paper: "#fef8eb" },
+  { name: "Saifee Decor", city: "Pune", emoji: "🎈", gradient: "from-teal-50 via-teal-100 to-emerald-200", stat: "140 events styled", logo: saifeeLogo },
+  { name: "Tasneem's Tiffins", city: "Kolkata", emoji: "🥘", gradient: "from-red-50 via-red-100 to-orange-200", stat: "580 subscribers", delta: "💜", logo: tasneemLogo, paper: "#f0b66f" },
 ];
 
 function MerchantCard({ m }: { m: Merchant }) {
   return (
     <div
       className={`relative aspect-[2/3] w-[clamp(8.5rem,8.929vw+6.714rem,14.75rem)] flex-none overflow-hidden rounded-2xl bg-gradient-to-br ${m.gradient}`}
+      style={m.paper ? { background: m.paper } : undefined}
     >
       {/* Stat chips, echoing the reference's overlaid app metrics */}
-      <div className="absolute left-2 right-2 top-2 flex flex-wrap gap-1">
-        <span className="rounded-full bg-white/75 px-2 py-1 text-[0.62rem] font-semibold backdrop-blur">
+      <div className="absolute left-2 right-2 top-2 z-10 flex flex-wrap gap-1">
+        <span className="rounded-full bg-white/75 px-2 py-1 text-[0.62rem] font-semibold ring-1 ring-black/5 backdrop-blur">
           {m.stat}
         </span>
         {m.delta &&
@@ -99,10 +119,24 @@ function MerchantCard({ m }: { m: Merchant }) {
             </span>
           ))}
       </div>
-      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[3.4rem] drop-shadow-sm">
-        {m.emoji}
-      </span>
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent px-3 pb-2.5 pt-8 text-white">
+      {m.logo ? (
+        <Image
+          src={m.logo}
+          alt={`${m.name} logo`}
+          fill
+          sizes="(min-width: 1280px) 236px, 20vw"
+          className={`object-contain p-5 ${m.paper ? "" : "mix-blend-multiply"}`}
+        />
+      ) : (
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[3.4rem] drop-shadow-sm">
+          {m.emoji}
+        </span>
+      )}
+      <div
+        className={`absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent px-3 pb-2.5 pt-8 text-white ${
+          m.logo ? "from-black/70" : "from-black/55"
+        }`}
+      >
         <p className="text-[0.8rem] font-semibold leading-tight">{m.name}</p>
         <p className="text-[0.68rem] text-white/75">{m.city}</p>
       </div>
