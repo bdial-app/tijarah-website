@@ -8,6 +8,9 @@ import CloudTunnel from "./CloudTunnel";
 import FloatingCards from "./FloatingCards";
 import { PhoneMockup } from "./Devices";
 import StoreButtons from "./StoreButtons";
+import heroAnalytics from "@/assests/Heroimg/hero1.png";
+import heroProfile from "@/assests/Heroimg/hero2.png";
+import heroService from "@/assests/Heroimg/hero3.png";
 
 function StarRating() {
   return (
@@ -122,15 +125,24 @@ export default function Hero() {
             <FloatingCards />
 
             <div className="absolute left-[13%] top-[16%] hidden w-[18.5%] md:block [transform:perspective(1600px)_rotateY(16deg)_rotate(-6deg)]">
-              <PhoneMockup variant="chat" />
+              <PhoneMockup
+                screenshot={heroService}
+                alt="Tijarah service listing for centralised air conditioning"
+              />
             </div>
 
             <div className="absolute right-[13%] top-[16%] hidden w-[18.5%] md:block [transform:perspective(1600px)_rotateY(-16deg)_rotate(6deg)]">
-              <PhoneMockup variant="provider" />
+              <PhoneMockup
+                screenshot={heroProfile}
+                alt="Verified provider profile on Tijarah"
+              />
             </div>
 
             <div className="absolute left-1/2 top-0 w-[64%] -translate-x-1/2 sm:w-[38%] md:w-[22.5%]">
-              <PhoneMockup variant="home" />
+              <PhoneMockup
+                screenshot={heroAnalytics}
+                alt="Tijarah business analytics dashboard"
+              />
             </div>
 
             <div className="pointer-events-none absolute left-[57.5%] top-[34%] z-10 hidden w-[16%] md:block">

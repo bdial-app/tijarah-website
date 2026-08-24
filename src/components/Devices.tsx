@@ -2,6 +2,8 @@
 // container-query units (cqw) so the UI scales with whatever width the parent
 // gives the device.
 
+import Image, { type StaticImageData } from "next/image";
+
 const BRAND = "#0F162B";
 const AMBER = "#FDC003";
 
@@ -420,13 +422,27 @@ const screens = {
   leads: LeadsUI,
 } as const;
 
-export function PhoneMockup({ variant }: { variant: keyof typeof screens }) {
-  const Screen = screens[variant];
+type PhoneMockupProps =
+  | { variant: keyof typeof screens; screenshot?: never; alt?: never }
+  | { variant?: never; screenshot: StaticImageData; alt: string };
+
+export function PhoneMockup({ variant, screenshot, alt }: PhoneMockupProps) {
+  const Screen = variant ? screens[variant] : null;
   return (
     <div className="relative w-full [container-type:inline-size]">
       <div className="relative aspect-[392/852] w-full rounded-[14cqw] bg-[#0F162B] p-[2.4cqw] shadow-[0_30px_60px_-15px_rgba(15,22,43,0.35)]">
         <div className="relative h-full w-full overflow-hidden rounded-[11.8cqw] bg-[#F4F6FA]">
-          <Screen />
+          {Screen ? (
+            <Screen />
+          ) : (
+            <Image
+              src={screenshot!}
+              alt={alt!}
+              fill
+              sizes="30vw"
+              className="object-cover object-top"
+            />
+          )}
           {/* Dynamic island */}
           <div className="absolute left-1/2 top-[1.6cqw] h-[6.4cqw] w-[24cqw] -translate-x-1/2 rounded-full bg-[#0F162B]" />
         </div>

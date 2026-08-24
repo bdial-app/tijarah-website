@@ -41,7 +41,12 @@ const columns: Array<{
   },
 ];
 
-const socials = ["Instagram", "X", "LinkedIn", "YouTube"];
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/tijarahconnect?igsi=enJuMWEzM2pyZXBy",
+  },
+];
 
 export default function Footer() {
   return (
@@ -130,8 +135,14 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-2.5">
               {socials.map((s) => (
-                <a key={s} href="#" className="footer-pill">
-                  {s}
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-pill"
+                >
+                  {s.label}
                 </a>
               ))}
             </div>
