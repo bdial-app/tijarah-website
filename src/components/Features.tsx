@@ -1,5 +1,11 @@
+import Image, { type StaticImageData } from "next/image";
 import Reveal from "./Reveal";
 import { PhoneMockup } from "./Devices";
+import discoverShot from "@/assests/discover-2.png";
+import chatShot from "@/assests/chat-2.png";
+import trustShot from "@/assests/trust.png";
+import sakinaShot from "@/assests/sakina-2.png";
+import advShot from "@/assests/adv.png";
 
 // Three metric cards + two horizontal feature blocks, mirroring the
 // reference's "Start the day with confidence" section. Card tint colors and
@@ -10,12 +16,14 @@ function MetricCard({
   title,
   copy,
   phone,
+  screenshot,
   overlay,
 }: {
   tint: string;
   title: string;
   copy: string;
-  phone: "home" | "chat" | "provider" | "analytics" | "leads";
+  phone?: "home" | "chat" | "provider" | "analytics" | "leads";
+  screenshot?: { src: StaticImageData; alt: string };
   overlay: React.ReactNode;
 }) {
   return (
@@ -29,7 +37,11 @@ function MetricCard({
       </div>
       <div className="relative mt-6 flex aspect-[432/495] justify-center overflow-hidden">
         <div className="w-[68%]">
-          <PhoneMockup variant={phone} />
+          {screenshot ? (
+            <PhoneMockup screenshot={screenshot.src} alt={screenshot.alt} />
+          ) : (
+            <PhoneMockup variant={phone!} />
+          )}
         </div>
         {overlay}
       </div>
@@ -48,13 +60,15 @@ function GlassChip({ children }: { children: React.ReactNode }) {
 function ProviderCard({
   gradient,
   emoji,
+  image,
   name,
   city,
   stat,
   statColor,
 }: {
   gradient: string;
-  emoji: string;
+  emoji?: string;
+  image?: { src: StaticImageData; alt: string };
   name: string;
   city: string;
   stat: string;
@@ -62,8 +76,18 @@ function ProviderCard({
 }) {
   return (
     <div className="w-full overflow-hidden rounded-[2rem] bg-white shadow-[0_16px_40px_-16px_rgba(15,22,43,0.25)]">
-      <div className={`flex aspect-square items-center justify-center bg-gradient-to-br ${gradient}`}>
-        <span className="text-[4rem] drop-shadow-sm">{emoji}</span>
+      <div className={`relative flex aspect-square items-center justify-center overflow-hidden bg-gradient-to-br ${gradient}`}>
+        {image ? (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(min-width: 1024px) 20rem, 40vw"
+            className="object-cover object-top"
+          />
+        ) : (
+          <span className="text-[4rem] drop-shadow-sm">{emoji}</span>
+        )}
       </div>
       <div className="p-5">
         <div className="flex items-center justify-between gap-2">
@@ -136,7 +160,7 @@ export default function Features() {
         <div data-reveal className="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
           <h2 className="section-h2">Find the right service with confidence</h2>
           <p className="max-w-md text-[1.125rem] text-ink-60">
-            Search, compare, and connect — with real reviews from people you trust.
+            Search, compare, and connect, with real reviews from people you trust.
           </p>
         </div>
 
@@ -145,8 +169,8 @@ export default function Features() {
           <MetricCard
             tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(253,192,3,0.18)_90%,rgba(253,192,3,0.35))]"
             title="Discover"
-            copy="Typo-friendly search that knows your area — find anything from tiffin services to henna artists."
-            phone="home"
+            copy="Typo friendly search that knows your area find anything from tiffin services to henna artists."
+            screenshot={{ src: discoverShot, alt: "Tijarah app home screen showing search and nearby providers" }}
             overlay={
               <div className="absolute bottom-[-4%] left-1/2 flex w-[81%] -translate-x-1/2 flex-col gap-3">
                 <GlassChip>
@@ -161,8 +185,8 @@ export default function Features() {
           <MetricCard
             tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(51,71,127,0.2)_90%,rgba(51,71,127,0.4))]"
             title="Chat"
-            copy="Message providers directly — real-time, with photos, read receipts, and typing indicators."
-            phone="chat"
+            copy="Message providers directly in real-time, with photos, read receipts, and typing indicators."
+            screenshot={{ src: chatShot, alt: "Tijarah chat screen with a provider conversation and product enquiries" }}
             overlay={
               <div className="absolute bottom-[10%] right-[6%] w-[44%]">
                 <GlassChip>
@@ -177,8 +201,8 @@ export default function Features() {
           <MetricCard
             tint="[background-image:linear-gradient(rgba(255,255,255,0)_40%,rgba(122,141,186,0.25)_90%,rgba(122,141,186,0.45))]"
             title="Trust"
-            copy="Real ratings and reviews from your community, moderated with care."
-            phone="provider"
+            copy="Real ratings and reviews from your community, moderated with care so you know who you're hiring."
+            screenshot={{ src: trustShot, alt: "Tijarah provider profile with services, location, and contact details" }}
             overlay={
               <div className="absolute bottom-[8%] left-1/2 flex w-[87%] -translate-x-1/2 gap-3">
                 <div className="flex-1 rounded-2xl bg-white p-4 shadow-[0_2px_16px_rgba(0,0,0,0.1)]">
@@ -202,7 +226,7 @@ export default function Features() {
           <div className="w-full p-[clamp(2.5rem,0.714vw+2.357rem,3rem)] lg:w-[clamp(23.125rem,18.214vw+19.482rem,35.875rem)] lg:pl-12">
             <h3 className="card-h2">Women-led, front and center</h3>
             <p className="mt-4 text-[1.05rem] text-ink-60">
-              A dedicated hub celebrating women-led businesses — discover them,
+              A dedicated hub celebrating women-led businesses. Discover them,
               support them, watch them grow.
             </p>
           </div>
@@ -210,7 +234,7 @@ export default function Features() {
             <div className="w-[40%] max-w-[20rem]">
               <ProviderCard
                 gradient="from-amber-200 via-orange-300 to-amber-500"
-                emoji="🎂"
+                image={{ src: sakinaShot, alt: "Sakina decorating a cake in her bakery" }}
                 name="Sakina's Bakes"
                 city="Hyderabad"
                 stat="4.9 ★ · 💜 Women-led"
@@ -220,8 +244,8 @@ export default function Features() {
             <div className="w-[40%] max-w-[20rem] translate-y-10">
               <ProviderCard
                 gradient="from-amber-100 via-yellow-200 to-orange-300"
-                emoji="🎨"
-                name="Arwa's Henna Studio"
+                image={{ src: advShot, alt: "Advocate Nisrin Dammerwala at her desk in front of law books" }}
+                name="Adv.Nisrin Dammerwala"
                 city="Pune"
                 stat="312 bookings · 💜 Women-led"
                 statColor="text-violet-600"

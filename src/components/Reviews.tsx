@@ -18,7 +18,7 @@ const rowB: Review[] = [
   { title: "Verified means I can relax", author: "sakina_hyd", date: "September 2, 2026", body: "“Aadhaar and iJamat verification means I know exactly who I'm dealing with. Reviews are genuine and moderated.”" },
   { title: "Urdu support! Finally", author: "Taher52", date: "August 24, 2026", body: "“My mother uses it in Urdu, I use it in English. Ten languages in one community app.”" },
   { title: "Deals actually worth claiming", author: "zahra.px", date: "August 8, 2026", body: "“20% off my first mehndi booking and a free dessert with my tiffin sign-up. The deals page is my first stop.”" },
-  { title: "The community, digitized", author: "Murtaza B.", date: "July 18, 2026", body: "“From Surat to Mumbai, every trusted name is here. Chat, reviews, directions — one place.”" },
+  { title: "The community, digitized", author: "Murtaza B.", date: "July 18, 2026", body: "“From Surat to Mumbai, every trusted name is here. Chat, reviews, directions, all in one place.”" },
 ];
 
 function Stars() {

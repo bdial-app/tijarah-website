@@ -8,7 +8,7 @@ import SignInSteps from "@/components/login/SignInSteps";
 import WhyInApp from "@/components/login/WhyInApp";
 
 export const metadata: Metadata = {
-  title: "Sign in — Tijarah",
+  title: "Sign in | Tijarah",
   description:
     "Tijarah accounts are verified inside the app. Download Tijarah free from the App Store or Google Play, verify your number, and you are signed in.",
 };

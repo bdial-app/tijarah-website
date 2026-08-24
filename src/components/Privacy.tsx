@@ -79,7 +79,7 @@ export default function Privacy() {
         <h2 className="section-h2 mt-6">Built for trust</h2>
         <p className="mt-4 max-w-md text-[1.125rem] text-white/60">
           Every profile is verified, every review is moderated, and your data
-          stays yours — never sold.
+          stays yours, never sold.
         </p>
       </div>
     </section>

@@ -86,7 +86,7 @@ const values: Array<{
   {
     Icon: Rupee,
     title: "Zero commission, always",
-    copy: "Providers keep every ₹ a customer pays them. We charge no cut on bookings — the business belongs to the person doing the work.",
+    copy: "Providers keep every ₹ a customer pays them. We charge no cut on bookings. The business belongs to the person doing the work.",
   },
   {
     Icon: Lock,

@@ -11,9 +11,9 @@ import Timeline from "@/components/about/Timeline";
 import Team from "@/components/about/Team";
 
 export const metadata: Metadata = {
-  title: "About — Tijarah",
+  title: "About | Tijarah",
   description:
-    "Tijarah is a community marketplace built by and for the Bohri community in India — verified providers, women-led businesses, ten languages, and zero commission.",
+    "Tijarah is a community marketplace built by and for the Bohri community in India: verified providers, women-led businesses, ten languages, and zero commission.",
 };
 
 export default function AboutPage() {

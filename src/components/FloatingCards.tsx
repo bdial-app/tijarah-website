@@ -86,7 +86,7 @@ export default function FloatingCards() {
         <p className="mt-1.5 text-[12px] leading-snug">
           “Found my wedding caterer here!”
         </p>
-        <p className="mt-1 text-[11px] text-ink-60">— Arwa M.</p>
+        <p className="mt-1 text-[11px] text-ink-60">Arwa M.</p>
       </FloatCard>
 
       <FloatCard className="right-[2.5%] top-[8%] w-[14.5%] min-w-[180px]" delay={1.8}>

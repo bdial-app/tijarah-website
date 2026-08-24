@@ -47,7 +47,7 @@ const cards: Card[] = [
   {
     tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(114,132,178,0.45),rgba(114,132,178,0.35)_10%,rgba(255,255,255,0)_64%)]",
     title: "Know what's working",
-    copy: "Track views, searches, calls, and saves — see exactly how customers find you.",
+    copy: "Track views, searches, calls, and saves to see exactly how customers find you.",
     phone: "analytics",
     chip: (
       <div className="absolute -left-[28%] top-[18%] w-[70%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
@@ -83,7 +83,7 @@ const cards: Card[] = [
   {
     tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(243,188,28,0.4),rgba(243,188,28,0.2)_10%,rgba(255,255,255,0)_64%)]",
     title: "Deals that bring them in",
-    copy: "Launch offers with quotas and expiry — then watch them convert.",
+    copy: "Launch offers with quotas and expiry, then watch them convert.",
     phone: "home",
     chip: (
       <div className="absolute -left-[26%] top-[30%] w-[68%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">

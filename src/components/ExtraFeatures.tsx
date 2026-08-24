@@ -11,7 +11,7 @@ const DURATION = 4500;
 const features = [
   { title: "Deals & Offers", copy: "Community-exclusive offers before they expire.", emoji: "🏷️", accent: "from-rose-200 to-pink-400" },
   { title: "Save & Bookmark", copy: "Keep providers and products handy for later.", emoji: "🔖", accent: "from-amber-200 to-orange-400" },
-  { title: "10 Languages", copy: "English to Urdu, Gujarati to Tamil — yours included.", emoji: "🌍", accent: "from-sky-200 to-blue-400" },
+  { title: "10 Languages", copy: "English to Urdu, Gujarati to Tamil, yours included.", emoji: "🌍", accent: "from-sky-200 to-blue-400" },
   { title: "Push Notifications", copy: "Replies, deals, and updates as they happen.", emoji: "🔔", accent: "from-violet-200 to-purple-400" },
   { title: "Works Offline", copy: "Browse cached feeds even on patchy networks.", emoji: "📶", accent: "from-stone-200 to-stone-400" },
   { title: "Invite & Earn", copy: "Refer friends and track every signup.", emoji: "🎁", accent: "from-emerald-200 to-green-400" },

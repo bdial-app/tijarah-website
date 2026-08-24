@@ -67,7 +67,7 @@ type Merchant = {
 
 const merchants: Merchant[] = [
   { name: "Zainab's Kitchen", city: "Mumbai", emoji: "🍱", gradient: "from-amber-200 via-orange-300 to-amber-500", stat: "4.9 ★ · 214 reviews", delta: "💜" },
-  { name: "Arwa's Henna Studio", city: "Pune", emoji: "🎨", gradient: "from-rose-200 via-rose-300 to-rose-500", stat: "312 bookings", delta: "💜" },
+  { name: "Adv.Nisrin Dammerwala", city: "Pune", emoji: "🎨", gradient: "from-rose-200 via-rose-300 to-rose-500", stat: "312 bookings", delta: "💜" },
   { name: "Taher Tailors", city: "Surat", emoji: "✂️", gradient: "from-stone-300 via-stone-400 to-stone-600", stat: "4.8 ★ · 190 reviews" },
   { name: "Sakina's Bakes", city: "Hyderabad", emoji: "🎂", gradient: "from-fuchsia-200 via-pink-300 to-pink-600", stat: "1.2k saves", delta: "💜" },
   { name: "Burhani Tutors", city: "Indore", emoji: "📚", gradient: "from-sky-200 via-blue-300 to-blue-600", stat: "86 students" },

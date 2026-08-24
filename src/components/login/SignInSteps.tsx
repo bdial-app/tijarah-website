@@ -9,7 +9,7 @@ const steps: Array<{ title: string; copy: string; note?: string }> = [
   },
   {
     title: "Verify your number",
-    copy: "Enter your mobile number and the six-digit OTP we send you. That number becomes your account — no email, no password to remember.",
+    copy: "Enter your mobile number and the six-digit OTP we send you. That number becomes your account. No email, no password to remember.",
   },
   {
     title: "Confirm your iJamat ID",

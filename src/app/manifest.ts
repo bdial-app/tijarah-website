@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Tijarah — Your Community, Connected",
+    name: "Tijarah: Your Community, Connected",
     short_name: "Tijarah",
     description:
       "Discover, chat with, and support trusted service providers from your community.",

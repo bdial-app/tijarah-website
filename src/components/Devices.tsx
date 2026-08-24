@@ -85,7 +85,7 @@ function HomeUI() {
   const providers = [
     { emoji: "🍱", name: "Zainab's Kitchen", cat: "Tiffin & Catering", rating: "4.9", count: "214", women: true },
     { emoji: "✂️", name: "Taher Tailors", cat: "Custom stitching", rating: "4.8", count: "190", women: false },
-    { emoji: "🎨", name: "Arwa's Henna Studio", cat: "Bridal mehndi", rating: "4.9", count: "312", women: true },
+    { emoji: "🎨", name: "Adv.Nisrin Dammerwala", cat: "Bridal mehndi", rating: "4.9", count: "312", women: true },
   ];
   return (
     <div className="flex h-full flex-col bg-[#F4F6FA]">
@@ -280,7 +280,7 @@ function ProviderUI() {
             >
               <Stars />
               <p className="mt-[1.6cqw] text-[3cqw] font-semibold">{r.quote}</p>
-              <p className="text-[2.6cqw] text-ink-40">— {r.who}</p>
+              <p className="text-[2.6cqw] text-ink-40">{r.who}</p>
             </div>
           ))}
         </div>

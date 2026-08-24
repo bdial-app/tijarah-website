@@ -17,7 +17,7 @@ export default function Story() {
             It began in a group chat
           </h2>
           <p data-reveal className="text-[1.125rem] text-ink-60">
-            Every Bohri neighbourhood has one — the thread where somebody asks
+            Every Bohri neighbourhood has one: the thread where somebody asks
             for a mehndi artist two days before a wedding, and forty people
             scroll past without answering. The talent was always there. The
             directory wasn&apos;t.
@@ -25,14 +25,14 @@ export default function Story() {
           <p data-reveal className="text-[1.125rem] text-ink-60">
             In 2024 we started keeping a spreadsheet of the providers our
             families actually vouched for. It reached four hundred names before
-            we admitted it needed to be an app — one where every profile is
+            we admitted it needed to be an app, one where every profile is
             verified, every review is written by someone who really booked, and
             the person on the other end is your neighbour, not a call centre.
           </p>
           <p data-reveal className="text-[1.125rem] text-ink-60">
             Tijarah is that spreadsheet, grown up. Providers keep{" "}
             <span className="font-semibold text-ink">100% of what they earn</span>{" "}
-            — we take no commission on a single ₹ — and the community keeps the
+            (we take no commission on a single ₹) and the community keeps the
             trust it already had.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function Story() {
               </div>
               <div>
                 <p className="text-[0.95rem] font-semibold leading-tight">
-                  Mohalla — Mumbai
+                  Mohalla, Mumbai
                 </p>
                 <p className="text-[0.78rem] text-ink-40">128 members</p>
               </div>

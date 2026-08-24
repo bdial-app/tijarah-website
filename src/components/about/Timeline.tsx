@@ -30,7 +30,7 @@ const milestones = [
   {
     date: "Winter 2025",
     title: "The Women-led hub",
-    copy: "A dedicated home for the home kitchens, boutiques and studios run by women — plus payouts, invoicing and repeat-customer tools built for them.",
+    copy: "A dedicated home for the home kitchens, boutiques and studios run by women, plus payouts, invoicing and repeat-customer tools built for them.",
     emoji: "🌸",
     tint: "from-violet-200 to-purple-400",
   },

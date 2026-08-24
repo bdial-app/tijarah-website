@@ -64,7 +64,7 @@ export default function WhyInApp() {
             </h3>
             <p className="text-[0.98rem] text-white/60">
               Install Tijarah on your new phone from the App Store or Google
-              Play and verify the same mobile number — your chats, bookings and
+              Play and verify the same mobile number, so your chats, bookings and
               saved providers come back with you.
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function WhyInApp() {
           <a href="#" className="text-white underline underline-offset-4">
             Contact support
           </a>{" "}
-          and we will sort it out with you — we never ask for an OTP, on any
+          and we will sort it out with you. We never ask for an OTP, on any
           channel.
         </p>
       </Reveal>
