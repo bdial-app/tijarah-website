@@ -5,7 +5,7 @@ import Link from "next/link";
 import StoreButtons, { AppStoreButton, PlayStoreButton } from "./StoreButtons";
 import DownloadLink from "./DownloadLink";
 import { usePlatform } from "@/lib/usePlatform";
-import { TijarahWordmark } from "./icons";
+import BrandLogo from "./BrandLogo";
 
 const links = [
   { label: "About", href: "/about" },
@@ -15,7 +15,7 @@ const links = [
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2 pl-3" aria-label="Tijarah home">
-      <TijarahWordmark className="text-[1.25rem]" />
+      <BrandLogo className="h-[1.6rem]" priority plate />
     </Link>
   );
 }

@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import logo from "@/assests/Frame 7.png";
+import BrandLogo from "../BrandLogo";
 
 // Two counter-rotating rings of community trades orbiting the brand mark.
 // The arms carry the spin; each chip nests a counter-spin so it stays upright.
@@ -55,13 +54,9 @@ function OrbitRing() {
         </div>
       ))}
 
-      {/* Brand mark at the centre — the icon carries the name, so no wordmark */}
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/70 p-[clamp(1.5rem,3vw,2.75rem)] shadow-[0_24px_60px_-24px_rgba(15,22,43,0.35)] backdrop-blur">
-        <Image
-          src={logo}
-          alt=""
-          className="h-[clamp(3rem,5vw,4.5rem)] w-[clamp(3rem,5vw,4.5rem)] rounded-2xl"
-        />
+      {/* Brand lockup at the centre — the mark carries the name on its own */}
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[2rem] bg-white/70 px-[clamp(1.25rem,2.5vw,2.25rem)] py-[clamp(1.5rem,3vw,2.75rem)] shadow-[0_24px_60px_-24px_rgba(15,22,43,0.35)] backdrop-blur">
+        <BrandLogo className="h-[clamp(2rem,3.2vw,3rem)]" priority />
       </div>
     </div>
   );

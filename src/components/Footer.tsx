@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
 import StoreButtons from "./StoreButtons";
-import { AppleIcon, GooglePlayIcon, TijarahWordmark } from "./icons";
+import { AppleIcon, GooglePlayIcon } from "./icons";
+import BrandLogo from "./BrandLogo";
 import { APP_STORE_URL, PLAY_STORE_URL, isExternalUrl } from "@/lib/store-links";
 
 // Links without an href aren't built yet and fall back to "#".
@@ -74,11 +75,11 @@ export default function Footer() {
 
         <div className="mx-auto max-w-[90rem] px-[clamp(1.5rem,2vw,3rem)] pb-10 pt-16">
           <div className="flex flex-col gap-14 lg:flex-row lg:justify-between lg:gap-20">
-            {/* Brand: the wordmark carries the lockup on its own — the tile
-                version disappears against the navy. */}
+            {/* Brand: the tile's own navy melts into the footer, leaving the
+                wordmark reading as if it were set straight on the background. */}
             <div className="flex max-w-sm flex-col items-start gap-6">
               <Link href="/" aria-label="Tijarah home">
-                <TijarahWordmark className="text-[1.65rem]" light />
+                <BrandLogo className="h-[2.1rem]" />
               </Link>
               <p className="text-[0.98rem] leading-relaxed text-white/55">
                 Your community, connected. Verified providers, reviews you can
