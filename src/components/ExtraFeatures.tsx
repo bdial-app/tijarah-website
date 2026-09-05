@@ -1,26 +1,34 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image, { type StaticImageData } from "next/image";
+import pushShot from "@/assests/push.png";
 
 // Auto-advancing feature tabs, mirroring the reference's "And that's not all"
 // section: a phone previews the active feature while the list cycles with a
-// progress ring. Click a tab to jump; cycling pauses when hovered or offscreen.
+// progress ring. Hover (or click) a tab to jump; cycling pauses while the
+// section is hovered or offscreen.
 
 const DURATION = 4500;
 
-const features = [
+type Feature = {
+  title: string;
+  copy: string;
+  emoji: string;
+  accent: string;
+  screenshot?: { src: StaticImageData; alt: string };
+};
+
+const features: Feature[] = [
   { title: "Deals & Offers", copy: "Community-exclusive offers before they expire.", emoji: "🏷️", accent: "from-rose-200 to-pink-400" },
   { title: "Save & Bookmark", copy: "Keep providers and products handy for later.", emoji: "🔖", accent: "from-amber-200 to-orange-400" },
-  { title: "10 Languages", copy: "English to Urdu, Gujarati to Tamil, yours included.", emoji: "🌍", accent: "from-sky-200 to-blue-400" },
-  { title: "Push Notifications", copy: "Replies, deals, and updates as they happen.", emoji: "🔔", accent: "from-violet-200 to-purple-400" },
-  { title: "Works Offline", copy: "Browse cached feeds even on patchy networks.", emoji: "📶", accent: "from-stone-200 to-stone-400" },
-  { title: "Invite & Earn", copy: "Refer friends and track every signup.", emoji: "🎁", accent: "from-emerald-200 to-green-400" },
+  { title: "Push Notifications", copy: "Replies, deals, and updates as they happen.", emoji: "🔔", accent: "from-violet-200 to-purple-400", screenshot: { src: pushShot, alt: "Tijarah business screen with a push notification about a new appointment request" } },
+  { title: "Share Your Catalogue", copy: "Send your full product list to anyone in a tap.", emoji: "📤", accent: "from-emerald-200 to-green-400" },
   { title: "Saved Locations", copy: "Home, work, and custom spots for faster search.", emoji: "📍", accent: "from-indigo-200 to-blue-400" },
-  { title: "Google Reviews Sync", copy: "Ratings merged with Google for the full picture.", emoji: "⭐", accent: "from-yellow-200 to-amber-400" },
   { title: "Smart Search", copy: "Typo-tolerant, did-you-mean search that just works.", emoji: "🔍", accent: "from-teal-200 to-emerald-400" },
 ];
 
-function FeatureScreen({ f, active }: { f: (typeof features)[number]; active: boolean }) {
+function FeatureScreen({ f, active }: { f: Feature; active: boolean }) {
   return (
     <div
       className={`absolute inset-0 flex flex-col bg-[#F4F6FA] transition-opacity duration-500 ${
@@ -28,37 +36,49 @@ function FeatureScreen({ f, active }: { f: (typeof features)[number]; active: bo
       }`}
       aria-hidden={!active}
     >
-      <div className={`flex h-[38%] flex-col items-center justify-end bg-gradient-to-br ${f.accent} pb-[6cqw]`}>
-        <span className="text-[14cqw] drop-shadow-sm">{f.emoji}</span>
-        <p className="mt-[2cqw] rounded-full bg-white/80 px-[4cqw] py-[1.6cqw] text-[3.4cqw] font-semibold backdrop-blur">
-          {f.title}
-        </p>
-      </div>
-      <div className="flex-1 space-y-[3cqw] p-[6cqw]">
-        <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
-          <div className="h-[2.4cqw] w-[55%] rounded-full bg-ink/15" />
-          <div className="mt-[2.4cqw] h-[2.4cqw] w-[80%] rounded-full bg-ink/8" />
-          <div className="mt-[2.4cqw] h-[2.4cqw] w-[68%] rounded-full bg-ink/8" />
-        </div>
-        <div className="flex gap-[3cqw]">
-          <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
-            <div className="h-[7cqw] w-[7cqw] rounded-full bg-ink/10" />
-            <div className="mt-[2.4cqw] h-[2.4cqw] w-[85%] rounded-full bg-ink/10" />
+      {f.screenshot ? (
+        <Image
+          src={f.screenshot.src}
+          alt={f.screenshot.alt}
+          fill
+          sizes="(max-width: 1024px) 60vw, 20rem"
+          className="object-cover object-top"
+        />
+      ) : (
+        <>
+          <div className={`flex h-[38%] flex-col items-center justify-end bg-gradient-to-br ${f.accent} pb-[6cqw]`}>
+            <span className="text-[14cqw] drop-shadow-sm">{f.emoji}</span>
+            <p className="mt-[2cqw] rounded-full bg-white/80 px-[4cqw] py-[1.6cqw] text-[3.4cqw] font-semibold backdrop-blur">
+              {f.title}
+            </p>
           </div>
-          <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
-            <div className="h-[7cqw] w-[7cqw] rounded-full bg-ink/10" />
-            <div className="mt-[2.4cqw] h-[2.4cqw] w-[70%] rounded-full bg-ink/10" />
+          <div className="flex-1 space-y-[3cqw] p-[6cqw]">
+            <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
+              <div className="h-[2.4cqw] w-[55%] rounded-full bg-ink/15" />
+              <div className="mt-[2.4cqw] h-[2.4cqw] w-[80%] rounded-full bg-ink/8" />
+              <div className="mt-[2.4cqw] h-[2.4cqw] w-[68%] rounded-full bg-ink/8" />
+            </div>
+            <div className="flex gap-[3cqw]">
+              <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
+                <div className="h-[7cqw] w-[7cqw] rounded-full bg-ink/10" />
+                <div className="mt-[2.4cqw] h-[2.4cqw] w-[85%] rounded-full bg-ink/10" />
+              </div>
+              <div className="flex-1 rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
+                <div className="h-[7cqw] w-[7cqw] rounded-full bg-ink/10" />
+                <div className="mt-[2.4cqw] h-[2.4cqw] w-[70%] rounded-full bg-ink/10" />
+              </div>
+            </div>
+            <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
+              <div className="h-[2.4cqw] w-[40%] rounded-full bg-ink/15" />
+              <div className="mt-[3cqw] flex h-[10cqw] items-end gap-[1.8cqw]">
+                {[40, 70, 55, 90, 62, 80, 48].map((v, i) => (
+                  <span key={i} className="flex-1 rounded-[1cqw] bg-ink/10" style={{ height: `${v}%` }} />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="rounded-[5cqw] bg-white p-[4.6cqw] shadow-[0_2cqw_6cqw_rgba(15,22,43,0.06)]">
-          <div className="h-[2.4cqw] w-[40%] rounded-full bg-ink/15" />
-          <div className="mt-[3cqw] flex h-[10cqw] items-end gap-[1.8cqw]">
-            {[40, 70, 55, 90, 62, 80, 48].map((v, i) => (
-              <span key={i} className="flex-1 rounded-[1cqw] bg-ink/10" style={{ height: `${v}%` }} />
-            ))}
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 }
@@ -92,7 +112,7 @@ export default function ExtraFeatures() {
   // Keep the active tab visible in the list. Scrolls only the list container —
   // scrollIntoView would scroll the page itself on mount.
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || hovering) return;
     const list = listRef.current;
     const el = list?.children[active] as HTMLElement | undefined;
     if (!list || !el) return;
@@ -105,7 +125,7 @@ export default function ExtraFeatures() {
         behavior: "smooth",
       });
     }
-  }, [active, inView]);
+  }, [active, inView, hovering]);
 
   const running = inView && !hovering;
 
@@ -150,6 +170,8 @@ export default function ExtraFeatures() {
                   key={f.title}
                   type="button"
                   onClick={() => setActive(i)}
+                  onMouseEnter={() => setActive(i)}
+                  onFocus={() => setActive(i)}
                   className={`flex items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left transition-colors duration-300 ${
                     isActive ? "bg-white shadow-[0_8px_24px_-12px_rgba(15,22,43,0.18)]" : "hover:bg-white/50"
                   }`}

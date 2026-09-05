@@ -6,6 +6,7 @@ import chatShot from "@/assests/chat-2.png";
 import trustShot from "@/assests/trust.png";
 import sakinaShot from "@/assests/sakina-2.png";
 import advShot from "@/assests/adv.png";
+import verifiedShot from "@/assests/Verified.png";
 
 // Three metric cards + two horizontal feature blocks, mirroring the
 // reference's "Start the day with confidence" section. Card tint colors and
@@ -262,7 +263,7 @@ export default function Features() {
           <div className="w-full p-[clamp(2.5rem,0.714vw+2.357rem,3rem)] lg:w-[clamp(23.125rem,15.536vw+20.018rem,34rem)] lg:pr-12">
             <h3 className="card-h2">Verified, so you can trust who you hire</h3>
             <p className="mt-4 text-[1.05rem] text-ink-60">
-              Aadhaar and iJamat verification, OTP-checked contact numbers, and
+              Aadhaar and EJamat verification, OTP-checked contact numbers, and
               earned badges like Top Rated and Rising Star.
             </p>
           </div>
@@ -274,7 +275,10 @@ export default function Features() {
             </div>
             {/* Phone on top */}
             <div className="absolute left-[30%] top-[16%] w-[38%] max-w-[15rem]">
-              <PhoneMockup variant="provider" />
+              <PhoneMockup
+                screenshot={verifiedShot}
+                alt="Tijarah provider profile showing Verified, Women-led, and Top Rated badges"
+              />
             </div>
             {/* Floating verification cards */}
             <div className="absolute right-[8%] top-[14%] w-[34%] max-w-[13rem] rotate-[5deg] rounded-2xl bg-white p-4 shadow-[0_16px_40px_-16px_rgba(15,22,43,0.35)]">
@@ -290,7 +294,7 @@ export default function Features() {
             </div>
             <div className="absolute bottom-[12%] left-[6%] w-[32%] max-w-[12rem] -rotate-[10deg] rounded-2xl bg-white p-4 shadow-[0_16px_40px_-16px_rgba(15,22,43,0.35)]">
               <p className="text-[0.7rem] font-semibold uppercase tracking-wider text-ink-40">
-                iJamat card
+                EJamat card
               </p>
               <p className="mt-1 text-[0.9rem] font-semibold">Community member ✓</p>
               <div className="mt-2 space-y-1.5">

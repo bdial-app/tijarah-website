@@ -4,7 +4,10 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import type { StaticImageData } from "next/image";
 import { PhoneMockup } from "./Devices";
+import dashboardShot from "@/assests/dashboard.png";
+import leadsShot from "@/assests/Leads.png";
 
 // Dark "Tijarah for Business" section, mirroring the reference's Bevel
 // Intelligence block: entered via a scrubbed "shutter" transition (horizontal
@@ -39,7 +42,8 @@ type Card = {
   tint: string;
   title: string;
   copy: string;
-  phone: "home" | "chat" | "provider" | "analytics" | "leads";
+  phone?: "home" | "chat" | "provider" | "analytics" | "leads";
+  screenshot?: { src: StaticImageData; alt: string };
   chip: React.ReactNode;
 };
 
@@ -48,7 +52,10 @@ const cards: Card[] = [
     tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(114,132,178,0.45),rgba(114,132,178,0.35)_10%,rgba(255,255,255,0)_64%)]",
     title: "Know what's working",
     copy: "Track views, searches, calls, and saves to see exactly how customers find you.",
-    phone: "analytics",
+    screenshot: {
+      src: dashboardShot,
+      alt: "Tijarah business analytics dashboard showing views, searches, enquiries, and hot leads",
+    },
     chip: (
       <div className="absolute -left-[28%] top-[18%] w-[70%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
         <p className="text-[0.75rem] text-ink-60">Search appearances</p>
@@ -65,7 +72,10 @@ const cards: Card[] = [
     tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(253,192,3,0.4),rgba(253,192,3,0.2)_10%,rgba(255,255,255,0)_64%)]",
     title: "Never miss a lead",
     copy: "Hot, warm, and cold lead scoring shows you who's ready to book right now.",
-    phone: "leads",
+    screenshot: {
+      src: leadsShot,
+      alt: "Tijarah leads screen with warm, soft, and cold leads scored and ready to unlock",
+    },
     chip: (
       <div className="absolute -right-[24%] top-[24%] flex w-[72%] flex-col gap-2">
         {[["🔥", "New hot lead", "Wedding mehndi · 2 min ago"]].map(([icon, title, sub]) => (
@@ -77,21 +87,6 @@ const cards: Card[] = [
             </span>
           </div>
         ))}
-      </div>
-    ),
-  },
-  {
-    tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(243,188,28,0.4),rgba(243,188,28,0.2)_10%,rgba(255,255,255,0)_64%)]",
-    title: "Deals that bring them in",
-    copy: "Launch offers with quotas and expiry, then watch them convert.",
-    phone: "home",
-    chip: (
-      <div className="absolute -left-[26%] top-[30%] w-[68%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
-        <p className="text-[0.95rem] font-semibold leading-snug">🎉 20% off first order</p>
-        <p className="mt-1 text-[0.75rem] text-ink-60">34 of 50 claimed</p>
-        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-ink/10">
-          <div className="h-full w-[68%] rounded-full bg-[#FDC003]" />
-        </div>
       </div>
     ),
   },
@@ -213,7 +208,14 @@ export default function Intelligence() {
               </div>
               <div className="relative flex w-full justify-center pb-12 lg:h-full lg:w-1/2 lg:items-end lg:pb-0">
                 <div className="relative w-[56%] max-w-[17rem] lg:translate-y-[12%]">
-                  <PhoneMockup variant={card.phone} />
+                  {card.screenshot ? (
+                    <PhoneMockup
+                      screenshot={card.screenshot.src}
+                      alt={card.screenshot.alt}
+                    />
+                  ) : (
+                    <PhoneMockup variant={card.phone!} />
+                  )}
                   {card.chip}
                 </div>
               </div>
