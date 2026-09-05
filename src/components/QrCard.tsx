@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -13,6 +13,8 @@ import QrPattern from "./QrPattern";
 
 export default function QrCard() {
   const ref = useRef<HTMLDivElement>(null);
+  // Bumped each time the card slides in, so the QR re-assembles with it.
+  const [reveal, setReveal] = useState(0);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -31,6 +33,7 @@ export default function QrCard() {
       const next = pastHero && !atFooter;
       if (next === visible) return;
       visible = next;
+      if (next) setReveal((n) => n + 1);
       gsap.to(el, {
         y: next ? 0 : 24,
         autoAlpha: next ? 1 : 0,
@@ -82,10 +85,11 @@ export default function QrCard() {
       >
         {(platform) => (
           <>
-            {/* Big enough that each QR module is a few pixels across — below
-                about 6rem the code stops scanning reliably. */}
-            <div className="h-28 w-28 rounded-xl bg-white p-2">
-              <QrPattern />
+            {/* Big enough that each QR module is a few pixels across — the
+                logo needs error-correction H, which packs in more modules, so
+                below about 7rem the code stops scanning reliably. */}
+            <div className="h-32 w-32 rounded-xl bg-white p-2">
+              <QrPattern playKey={reveal} />
             </div>
             <div>
               <p className="text-[0.95rem] font-semibold text-white">

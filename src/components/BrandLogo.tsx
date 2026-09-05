@@ -11,6 +11,9 @@ import logo from "@/assests/logo.png";
 // gradient is flat across each row and runs top-to-bottom, so a plate carrying
 // the same gradient over the band's range meets the image edge invisibly.
 //
+// `radius` swaps the default corner rounding — a tiny rendering (the QR tile)
+// would turn into a pill at the standard radius.
+//
 // `alt` is empty by default: every current use sits inside a link that already
 // carries an aria-label, so a name here would just be announced twice.
 export default function BrandLogo({
@@ -18,11 +21,13 @@ export default function BrandLogo({
   priority = false,
   alt = "",
   plate = false,
+  radius = "rounded-xl",
 }: {
   className?: string;
   priority?: boolean;
   alt?: string;
   plate?: boolean;
+  radius?: string;
 }) {
   const mark = (
     <Image
@@ -30,7 +35,7 @@ export default function BrandLogo({
       alt={alt}
       priority={priority}
       className={`aspect-[2.78/1] w-auto object-cover object-[center_51%] ${
-        plate ? "" : "rounded-xl"
+        plate ? "" : radius
       } ${className}`}
     />
   );
