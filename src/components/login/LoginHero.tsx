@@ -79,7 +79,7 @@ export default function LoginHero() {
               className="max-w-xl text-[1.125rem] text-ink-60"
             >
               Tijarah has no web login, and that is on purpose. Your account is
-              verified with your phone number and iJamat ID inside the app, so
+              verified with your phone number and EJamat ID inside the app, so
               there is no password to forget and no web form to phish. Get
               Tijarah from the App Store or Google Play and you are signed in on
               your device.
@@ -129,7 +129,7 @@ export default function LoginHero() {
               </span>
               <div>
                 <p className="text-[0.78rem] font-semibold leading-tight">
-                  iJamat ID verified
+                  EJamat ID verified
                 </p>
                 <p className="text-[0.7rem] text-ink-60">Signed in as Fatema</p>
               </div>

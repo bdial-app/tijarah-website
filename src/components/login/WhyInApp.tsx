@@ -20,7 +20,7 @@ const reasons: Array<{ emoji: string; title: string; copy: string }> = [
   {
     emoji: "🛡️",
     title: "Verified both ways",
-    copy: "Customers verify with an iJamat ID and providers clear an Aadhaar check, so the person on the other side of a chat is a real neighbour.",
+    copy: "Customers verify with an EJamat ID and providers clear an Aadhaar check, so the person on the other side of a chat is a real neighbour.",
   },
 ];
 

@@ -76,7 +76,7 @@ const values: Array<{
   {
     Icon: ShieldCheck,
     title: "Verified, not just listed",
-    copy: "Every provider clears Aadhaar and iJamat ID checks before a profile goes live. No anonymous sellers, no ghost listings.",
+    copy: "Every provider clears Aadhaar and EJamat ID checks before a profile goes live. No anonymous sellers, no ghost listings.",
   },
   {
     Icon: Sprout,

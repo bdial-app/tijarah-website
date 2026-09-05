@@ -12,8 +12,8 @@ const steps: Array<{ title: string; copy: string; note?: string }> = [
     copy: "Enter your mobile number and the six-digit OTP we send you. That number becomes your account. No email, no password to remember.",
   },
   {
-    title: "Confirm your iJamat ID",
-    copy: "Add your iJamat ID once so the community knows you are one of them. Providers additionally clear an Aadhaar check before going live.",
+    title: "Confirm your EJamat ID",
+    copy: "Add your EJamat ID once so the community knows you are one of them. Providers additionally clear an Aadhaar check before going live.",
   },
 ];
 

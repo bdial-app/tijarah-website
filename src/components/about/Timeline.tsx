@@ -16,7 +16,7 @@ const milestones = [
   {
     date: "Winter 2024",
     title: "The first verified profiles",
-    copy: "We pair Aadhaar with iJamat ID so a listing can prove both identity and community standing. 180 providers onboard in Mumbai and Pune.",
+    copy: "We pair Aadhaar with EJamat ID so a listing can prove both identity and community standing. 180 providers onboard in Mumbai and Pune.",
     emoji: "🪪",
     tint: "from-sky-200 to-blue-400",
   },
