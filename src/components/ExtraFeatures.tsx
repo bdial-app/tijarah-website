@@ -3,6 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 import pushShot from "@/assests/push.png";
+import dealsShot from "@/assests/Deals and Offers.png";
+import savedShot from "@/assests/Saved-Bookmarks.png";
+import catalogueShot from "@/assests/Catalogue.png";
+import locationsShot from "@/assests/saved location.png";
+import searchShot from "@/assests/Smart-search.png";
 
 // Auto-advancing feature tabs, mirroring the reference's "And that's not all"
 // section: a phone previews the active feature while the list cycles with a
@@ -20,12 +25,12 @@ type Feature = {
 };
 
 const features: Feature[] = [
-  { title: "Deals & Offers", copy: "Community-exclusive offers before they expire.", emoji: "🏷️", accent: "from-rose-200 to-pink-400" },
-  { title: "Save & Bookmark", copy: "Keep providers and products handy for later.", emoji: "🔖", accent: "from-amber-200 to-orange-400" },
+  { title: "Deals & Offers", copy: "Community-exclusive offers before they expire.", emoji: "🏷️", accent: "from-rose-200 to-pink-400", screenshot: { src: dealsShot, alt: "Tijarah Manage Business screen on the Offers tab listing active, upcoming, and expired deals" } },
+  { title: "Save & Bookmark", copy: "Keep providers and products handy for later.", emoji: "🔖", accent: "from-amber-200 to-orange-400", screenshot: { src: savedShot, alt: "Tijarah Saved screen listing bookmarked verified businesses in Pune" } },
   { title: "Push Notifications", copy: "Replies, deals, and updates as they happen.", emoji: "🔔", accent: "from-violet-200 to-purple-400", screenshot: { src: pushShot, alt: "Tijarah business screen with a push notification about a new appointment request" } },
-  { title: "Share Your Catalogue", copy: "Send your full product list to anyone in a tap.", emoji: "📤", accent: "from-emerald-200 to-green-400" },
-  { title: "Saved Locations", copy: "Home, work, and custom spots for faster search.", emoji: "📍", accent: "from-indigo-200 to-blue-400" },
-  { title: "Smart Search", copy: "Typo-tolerant, did-you-mean search that just works.", emoji: "🔍", accent: "from-teal-200 to-emerald-400" },
+  { title: "Share Your Catalogue", copy: "Send your full product list to anyone in a tap.", emoji: "📤", accent: "from-emerald-200 to-green-400", screenshot: { src: catalogueShot, alt: "Tijarah Manage Business screen on the Catalogue tab listing a business's products and services" } },
+  { title: "Saved Locations", copy: "Home, work, and custom spots for faster search.", emoji: "📍", accent: "from-indigo-200 to-blue-400", screenshot: { src: locationsShot, alt: "Tijarah Saved Addresses screen with Home, Work, and Other locations in Pune" } },
+  { title: "Smart Search", copy: "Typo-tolerant, did-you-mean search that just works.", emoji: "🔍", accent: "from-teal-200 to-emerald-400", screenshot: { src: searchShot, alt: "Tijarah search results for content creation, grouped into businesses, products and services, and categories" } },
 ];
 
 function FeatureScreen({ f, active }: { f: Feature; active: boolean }) {

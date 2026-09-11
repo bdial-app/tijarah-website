@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { PhoneMockup } from "../Devices";
+import signInShot from "@/assests/Sign-in.png";
 import QrPattern from "../QrPattern";
 import StoreButtons from "../StoreButtons";
 import { AppleIcon, GooglePlayIcon } from "../icons";
@@ -117,7 +118,10 @@ export default function LoginHero() {
           {/* Phone with the in-app sign-in moment */}
           <div data-hero-stage className="relative mx-auto w-full max-w-[24rem]">
             <div className="relative mx-auto w-[72%] sm:w-[62%] lg:w-[76%]">
-              <PhoneMockup variant="home" />
+              <PhoneMockup
+                screenshot={signInShot}
+                alt="Tijarah sign-in sheet asking for a mobile number, over a blurred guest profile screen"
+              />
             </div>
 
             <div
@@ -150,7 +154,7 @@ export default function LoginHero() {
 
             <div
               data-hero-chip
-              className="absolute bottom-[6%] left-[6%] flex items-center gap-3 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(15,22,43,0.3)] ring-1 ring-black/5 backdrop-blur"
+              className="absolute bottom-[-3%] left-[6%] flex items-center gap-3 rounded-2xl bg-white/85 px-3.5 py-2.5 shadow-[0_16px_40px_-14px_rgba(15,22,43,0.3)] ring-1 ring-black/5 backdrop-blur"
             >
               <AppleIcon className="h-4 w-4" />
               <span className="text-[0.78rem] font-semibold">App Store</span>

@@ -8,6 +8,7 @@ import type { StaticImageData } from "next/image";
 import { PhoneMockup } from "./Devices";
 import dashboardShot from "@/assests/dashboard.png";
 import leadsShot from "@/assests/Leads.png";
+import sponsoredShot from "@/assests/Sponsored.png";
 
 // Dark "Tijarah for Business" section, mirroring the reference's Bevel
 // Intelligence block: entered via a scrubbed "shutter" transition (horizontal
@@ -94,7 +95,10 @@ const cards: Card[] = [
     tint: "[background-image:radial-gradient(circle_at_75%_100%,rgba(158,174,206,0.45),rgba(158,174,206,0.25)_10%,rgba(255,255,255,0)_64%)]",
     title: "Get seen first",
     copy: "Sponsored listings put you at the top of search and the explore carousel.",
-    phone: "provider",
+    screenshot: {
+      src: sponsoredShot,
+      alt: "Tijarah search results for game with a sponsored business listed first",
+    },
     chip: (
       <div className="absolute -right-[22%] top-[26%] w-[66%] rounded-2xl bg-white p-4 shadow-[0_24px_48px_-16px_rgba(15,22,43,0.35)]">
         <span className="inline-flex rounded-full bg-[#FDC003]/15 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-amber-600">
