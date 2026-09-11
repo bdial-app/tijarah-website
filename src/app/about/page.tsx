@@ -8,7 +8,6 @@ import Story from "@/components/about/Story";
 import Stats from "@/components/about/Stats";
 import Values from "@/components/about/Values";
 import Timeline from "@/components/about/Timeline";
-import Team from "@/components/about/Team";
 
 export const metadata: Metadata = {
   title: "About | Tijarah",
@@ -26,7 +25,6 @@ export default function AboutPage() {
         <Stats />
         <Values />
         <Timeline />
-        <Team />
         <Footer />
         <QrCard />
       </main>
