@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: "Tijarah: Your Community, Connected",
   description:
     "Discover, chat with, and support trusted service providers from your community: women-led businesses, verified profiles, real reviews, and deals, all in one app.",
