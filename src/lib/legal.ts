@@ -3,7 +3,7 @@
 // Each section gets an id so the in-page contents can deep-link to it.
 
 import type { Block } from "./blog";
-import { PRIVACY_EMAIL, SUPPORT_EMAIL } from "./site";
+import { PRIVACY_EMAIL, SITE_HOST, SUPPORT_EMAIL } from "./site";
 
 // TODO: replace with the registered company name, address and the named
 // grievance officer before launch. The Consumer Protection (E-Commerce)
@@ -51,7 +51,7 @@ export const terms: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `These Terms of Service (the **Terms**) are an agreement between you and ${LEGAL_ENTITY} (**Tijarah**, **we**, **us**), based at ${REGISTERED_ADDRESS}. They govern your use of the Tijarah mobile app on iOS and Android, the installable web app, and the website at tijarahconnect.com (together, the **Service**).`,
+          text: `These Terms of Service (the **Terms**) are an agreement between you and ${LEGAL_ENTITY} (**Tijarah**, **we**, **us**), based at ${REGISTERED_ADDRESS}. They govern your use of the Tijarah mobile app on iOS and Android, the installable web app, and the website at ${SITE_HOST} (together, the **Service**).`,
         },
         {
           type: "p",
@@ -338,7 +338,7 @@ export const privacy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `This Privacy Policy explains how ${LEGAL_ENTITY} (**Tijarah**, **we**, **us**) handles personal data when you use the Tijarah app on iOS or Android, the installable web app, or the website at tijarahconnect.com (together, the **Service**). It is written to meet the Digital Personal Data Protection Act, 2023 (**DPDP Act**), the Information Technology Act, 2000 and the rules under them.`,
+          text: `This Privacy Policy explains how ${LEGAL_ENTITY} (**Tijarah**, **we**, **us**) handles personal data when you use the Tijarah app on iOS or Android, the installable web app, or the website at ${SITE_HOST} (together, the **Service**). It is written to meet the Digital Personal Data Protection Act, 2023 (**DPDP Act**), the Information Technology Act, 2000 and the rules under them.`,
         },
         {
           type: "p",
@@ -575,7 +575,7 @@ export const privacy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "The tijarahconnect.com website is a static site. It sets no tracking cookies and runs no third-party advertising. The download page reads your browser's user agent on your device to send you to the right app store; nothing is sent to us. The App Store and Google Play have their own privacy policies for the download itself.",
+          text: `The ${SITE_HOST} website is a static site. It sets no tracking cookies and runs no third-party advertising. The download page reads your browser's user agent on your device to send you to the right app store; nothing is sent to us. The App Store and Google Play have their own privacy policies for the download itself.`,
         },
       ],
     },

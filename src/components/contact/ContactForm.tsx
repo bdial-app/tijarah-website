@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import { topics } from "@/lib/contact";
+import { SITE_HOST } from "@/lib/site";
 
 // Composes a mailto: link from the fields. Nothing is sent to a server; the
 // visitor's own mail app opens with the message ready, addressed to the
@@ -20,7 +21,7 @@ export default function ContactForm() {
   const details = [
     name.trim() ? `Name: ${name.trim()}` : "",
     reply.trim() ? `Reply to: ${reply.trim()}` : "",
-    "Sent from tijarahconnect.com/contact",
+    `Sent from ${SITE_HOST}/contact`,
   ].filter(Boolean);
   const body = [message.trim(), "", "—", ...details].join("\n");
 
