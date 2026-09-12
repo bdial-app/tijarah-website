@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { postPath, sortedPosts } from "@/lib/blog";
+import { legalDocs, legalPath } from "@/lib/legal";
 import { absoluteUrl } from "@/lib/site";
 
 // Static export: emitted once at build time as /sitemap.xml.
@@ -18,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    ...legalDocs.map((d) => ({
+      url: absoluteUrl(legalPath(d.slug)),
+      lastModified: new Date(d.effective),
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
     ...sortedPosts.map((p) => ({
       url: absoluteUrl(postPath(p.slug)),
       lastModified: new Date(p.updated ?? p.published),

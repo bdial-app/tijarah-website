@@ -298,6 +298,21 @@ body {
 .article-prose ol {
   list-style: decimal;
 }
+/* Legal documents nest blocks inside <section>s: restore the same rhythm
+   one level down and space the sections apart. */
+.article-prose > section + section {
+  margin-top: 3em;
+}
+.article-prose > section > h2 {
+  margin-top: 0;
+}
+.article-prose > section > * + * {
+  margin-top: 1.35em;
+}
+.article-prose > section > h2 + *,
+.article-prose > section > h3 + * {
+  margin-top: 0.85em;
+}
 .article-prose li::marker {
   color: var(--amber);
   font-weight: 600;

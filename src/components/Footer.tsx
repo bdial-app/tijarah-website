@@ -41,7 +41,10 @@ const columns: Array<{
   },
   {
     heading: "Legal",
-    links: [{ label: "Terms of Service" }, { label: "Privacy Policy" }],
+    links: [
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
+    ],
   },
 ];
 
