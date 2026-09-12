@@ -37,7 +37,7 @@ const columns: Array<{
   },
   {
     heading: "Support",
-    links: [{ label: "FAQ" }, { label: "Report a bug" }, { label: "Contact us" }],
+    links: [{ label: "FAQ", href: "/faq" }, { label: "Report a bug" }, { label: "Contact us" }],
   },
   {
     heading: "Legal",

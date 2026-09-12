@@ -394,6 +394,51 @@ body {
   font-size: 1.02rem;
 }
 
+/* FAQ page accordions: same card as the in-article FAQ, usable outside
+   .article-prose. */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.faq-list details {
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 24px 48px -32px rgba(15, 22, 43, 0.28);
+  padding: 1.1rem 1.4rem;
+}
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary::after {
+  content: "+";
+  flex: none;
+  color: var(--amber);
+  font-size: 1.3em;
+  line-height: 1;
+  transition: transform 0.3s;
+}
+.faq-list details[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq-list details p {
+  margin-top: 0.75rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink-60);
+}
+
 /* Infinite marquee: rows are duplicated in markup, each row slides one full width */
 @keyframes marquee-slide {
   from {
