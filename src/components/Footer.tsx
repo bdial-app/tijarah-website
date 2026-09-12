@@ -5,6 +5,7 @@ import { AppleIcon, GooglePlayIcon } from "./icons";
 import BrandLogo from "./BrandLogo";
 import { PhoneMockup } from "./Devices";
 import { APP_STORE_URL, PLAY_STORE_URL, isExternalUrl } from "@/lib/store-links";
+import { INSTAGRAM_URL } from "@/lib/contact";
 import ctaExplore from "@/assests/discover-2.png";
 import ctaService from "@/assests/Heroimg/hero3.png";
 import ctaProfile from "@/assests/Heroimg/hero2.png";
@@ -37,7 +38,10 @@ const columns: Array<{
   },
   {
     heading: "Support",
-    links: [{ label: "FAQ", href: "/faq" }, { label: "Report a bug" }, { label: "Contact us" }],
+    links: [
+      { label: "FAQ", href: "/faq" },
+      { label: "Contact us", href: "/contact" },
+    ],
   },
   {
     heading: "Legal",
@@ -48,12 +52,7 @@ const columns: Array<{
   },
 ];
 
-const socials = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/tijarahconnect?igsi=enJuMWEzM2pyZXBy",
-  },
-];
+const socials = [{ label: "Instagram", href: INSTAGRAM_URL }];
 
 export default function Footer() {
   return (

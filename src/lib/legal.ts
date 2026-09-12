@@ -308,7 +308,7 @@ export const terms: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `For help, complaints, or notices about these Terms, email [${SUPPORT_EMAIL}](mailto:${SUPPORT_EMAIL}) or use Report a bug and Contact us inside the app.`,
+          text: `For help, complaints, or notices about these Terms, email [${SUPPORT_EMAIL}](mailto:${SUPPORT_EMAIL}) or use the [contact page](/contact).`,
         },
         {
           type: "p",

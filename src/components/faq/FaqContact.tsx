@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "../Reveal";
 import StoreButtons from "../StoreButtons";
 import { SUPPORT_EMAIL } from "@/lib/site";
@@ -27,7 +28,7 @@ export default function FaqContact() {
             >
               {SUPPORT_EMAIL}
             </a>{" "}
-            or use Contact us inside the app. We reply within two working days,
+            or use the <Link href="/contact" className="font-semibold text-white underline decoration-amber decoration-2 underline-offset-4">contact page</Link>. We reply within two working days,
             and we never ask for an OTP.
           </p>
         </div>

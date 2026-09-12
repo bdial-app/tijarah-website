@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "../Reveal";
 import StoreButtons from "../StoreButtons";
 
@@ -73,9 +74,9 @@ export default function WhyInApp() {
 
         <p data-reveal className="text-[0.9rem] text-white/50">
           Trouble getting in?{" "}
-          <a href="#" className="text-white underline underline-offset-4">
+          <Link href="/contact" className="text-white underline underline-offset-4">
             Contact support
-          </a>{" "}
+          </Link>{" "}
           and we will sort it out with you. We never ask for an OTP, on any
           channel.
         </p>
