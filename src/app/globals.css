@@ -253,6 +253,132 @@ body {
   padding-bottom: clamp(5rem, 7.143vw + 3.571rem, 10rem);
 }
 
+/* Long-form article typography for the blog. Kept in the components layer so
+   utilities can still override individual elements. */
+.article-prose {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--ink-60);
+}
+.article-prose > * + * {
+  margin-top: 1.35em;
+}
+.article-prose h2 {
+  margin-top: 2.2em;
+  font-size: clamp(1.6rem, 0.714vw + 1.4rem, 2.1rem);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+  scroll-margin-top: 6rem;
+}
+.article-prose h3 {
+  margin-top: 1.8em;
+  font-size: clamp(1.2rem, 0.357vw + 1.1rem, 1.4rem);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.article-prose h2 + *,
+.article-prose h3 + * {
+  margin-top: 0.85em;
+}
+.article-prose ul,
+.article-prose ol {
+  padding-left: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.article-prose ul {
+  list-style: disc;
+}
+.article-prose ol {
+  list-style: decimal;
+}
+.article-prose li::marker {
+  color: var(--amber);
+  font-weight: 600;
+}
+.article-prose blockquote {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid var(--amber);
+  border-radius: 0 1.25rem 1.25rem 0;
+  background: rgba(15, 22, 43, 0.04);
+  color: var(--ink);
+  font-size: 1.3rem;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.article-prose blockquote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--ink-40);
+}
+.article-prose .article-tip {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1.5rem 1.75rem;
+  border-radius: 1.5rem;
+  background: #fff3c7;
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+.article-prose .article-tip-title {
+  margin-bottom: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #977100;
+}
+.article-prose .article-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.article-prose .article-faq details {
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 24px 48px -32px rgba(15, 22, 43, 0.28);
+  padding: 1.1rem 1.4rem;
+}
+.article-prose .article-faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.article-prose .article-faq summary::-webkit-details-marker {
+  display: none;
+}
+.article-prose .article-faq summary::after {
+  content: "+";
+  flex: none;
+  color: var(--amber);
+  font-size: 1.3em;
+  line-height: 1;
+  transition: transform 0.3s;
+}
+.article-prose .article-faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.article-prose .article-faq details p {
+  margin-top: 0.75rem;
+  font-size: 1.02rem;
+}
+
 /* Infinite marquee: rows are duplicated in markup, each row slides one full width */
 @keyframes marquee-slide {
   from {

@@ -16,7 +16,7 @@ const columns: Array<{
 }> = [
   {
     heading: "Company",
-    links: [{ label: "About us", href: "/about" }, { label: "Careers" }, { label: "Blog" }],
+    links: [{ label: "About us", href: "/about" }, { label: "Blog", href: "/blog" }],
   },
   {
     heading: "Get the app",
